@@ -27,14 +27,26 @@
 */
 
 
+#ifdef HAVE_CONFIG_H
+#include <config.h>
+#endif
+#include "TestingMoxParameterConverter.h"
+#include <fstream>
+#include <stdexcept>
+#include <string>
 
-#ifndef TESTINGMOXPARAMETERCONVERTER_H_
-#define TESTINGMOXPARAMETERCONVERTER_H_
+boost::shared_ptr<MoxParameterConverter> & getConverter()
+{
+	static boost::shared_ptr<MoxParameterConverter> converter;
+	if ( ! converter )
+	{
+		const std::string configFile = CONFIG_FILE;
+		std::ifstream params(configFile.c_str());
+		if ( ! params )
+			throw std::runtime_error("Unable to find file: " + configFile);
+		converter = boost::shared_ptr<MoxParameterConverter>(new MoxParameterConverter(params));
+	}
+	return converter;
+}
 
-#include <forecast/MoxParameterConverter.h>
-#include <boost/shared_ptr.hpp>
 
-boost::shared_ptr<MoxParameterConverter> & getConverter();
-
-
-#endif /* TESTINGMOXPARAMETERCONVERTER_H_ */

@@ -26,6 +26,9 @@
  MA  02110-1301, USA
  */
 
+#ifdef HAVE_CONFIG_H
+#include <config.h>
+#endif
 #include "Parser.h"
 #include <iostream>
 #include <stdexcept>
@@ -48,9 +51,9 @@ ForecastCollectionPtr parse(QIODevice & stream)
 {
 	QXmlStreamReader reader(&stream);
 
-	std::ifstream parameters(TEST_CONFIG_LOCATION"/etc/wdbFromMox.conf");
+	std::ifstream parameters(SYSCONFDIR"/wdbFromMox.conf");
 	if ( ! parameters )
-		throw std::runtime_error("Unable to find file: "TEST_CONFIG_LOCATION"/etc/wdbFromMox.conf");
+		throw std::runtime_error("Unable to find file: "SYSCONFDIR"/wdbFromMox.conf");
 	boost::shared_ptr<MoxParameterConverter> converter(new MoxParameterConverter(parameters));
 
 	ForecastCollector collector(converter);

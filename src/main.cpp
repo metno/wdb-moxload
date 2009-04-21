@@ -53,7 +53,7 @@ namespace
  */
 void version( ostream & out )
 {
-	out << "moxLoad"; // (" << PACKAGE << ") " << VERSION << endl;
+    out << PACKAGE_STRING << endl;
 }
 
 /**
@@ -65,7 +65,7 @@ void help( const boost::program_options::options_description & options, ostream 
 {
 	version( out );
 	out << '\n';
-    out << "Usage: moxLoad [OPTIONS] FILES...\n\n";
+    out << "Usage: "PACKAGE_NAME" [OPTIONS] FILES...\n\n";
     out << "Options:\n";
     out << options << endl;
 }
