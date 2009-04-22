@@ -22,7 +22,6 @@ AM_CPPFLAGS = \
 
 AM_LDFLAGS = $(wdb_LIBS) $(QtXml_LIBS) $(QtCore_LIBS)
 
-
 # Setting Targets
 
 noinst_LIBRARIES = libmoxBase.a
@@ -32,6 +31,10 @@ wdblib_PROGRAMS = moxLoad
 moxLoad_CPPFLAGS = $(AM_CPPFLAGS) $(libpqxx_CFLAGS)
 moxLoad_LDFLAGS = libmoxBase.a $(AM_LDFLAGS) $(libpqxx_LIBS)
 moxLoad_SOURCES =
+
+install-data-hook:
+	$(WDB_ADMINISTRATION) createuser moxload write
+
 
 EXTRA_DIST =
 

@@ -13,6 +13,7 @@ AS_IF([test "$wdb_conf" = no],
 	[AC_MSG_ERROR("Unable to find wdb - cannot proceed")]
 )
 
+AC_SUBST([WDB_ADMINISTRATION], [`$wdb_conf --bindir`/wdb])
 AC_SUBST([wdb_CONFIG], [`$wdb_conf --bindir`/wdbConfiguration])
 AC_SUBST([wdb_CFLAGS], [`$wdb_conf --cflags`])
 AC_SUBST([wdb_LIBS], ["-L`$wdb_conf --libdir` -lwdbLoaderBase -lwdbConfiguration -lwdbProjection -lwdbException -lwdbLogHandler -lwdbMath"])
