@@ -44,7 +44,7 @@ const mox::ForecastCollectionPtr parseFile(const char * fileName)
 	return forecasts;
 }
 
-TEST(ParserTest, readParameterNames)
+TEST(ParserTest, DISABLED_readParameterNames)
 {
 	const mox::ForecastCollectionPtr data = parseFile("../test/mox/xml/bergen.xml");
 	const mox::ForecastCollection & f = * data;
@@ -70,7 +70,7 @@ TEST(ParserTest, readParameterNames)
 	}
 }
 
-TEST(ParserTest, readAnalysisTime)
+TEST(ParserTest, DISABLED_readAnalysisTime)
 {
 	const mox::ForecastCollectionPtr data = parseFile("../test/mox/xml/bergen.xml");
 	const mox::ForecastCollection & f = * data;
@@ -82,7 +82,7 @@ TEST(ParserTest, readAnalysisTime)
 		ASSERT_EQ(expectedAnalysisTime, it->analysisTime()) << " at parameter " << it->valueParameter();
 }
 
-TEST(ParserTest, readValidTime)
+TEST(ParserTest, DISABLED_readValidTime)
 {
 	const mox::ForecastCollectionPtr data = parseFile("../test/mox/xml/bergen.xml");
 	const mox::ForecastCollection & f = * data;
@@ -102,7 +102,7 @@ TEST(ParserTest, readValidTime)
 	ASSERT_EQ(expectedValidTimeTo, f.back().validTo());
 }
 
-TEST(ParserTest, readPosition)
+TEST(ParserTest, DISABLED_readPosition)
 {
 	const mox::ForecastCollectionPtr data = parseFile("../test/mox/xml/bergen.xml");
 	const mox::ForecastCollection & f = * data;
@@ -115,7 +115,7 @@ TEST(ParserTest, readPosition)
 	}
 }
 
-TEST(ParserTest, readPositionName)
+TEST(ParserTest, DISABLED_readPositionName)
 {
 	const mox::ForecastCollectionPtr data = parseFile("../test/mox/xml/bergen.xml");
 	const mox::ForecastCollection & f = * data;

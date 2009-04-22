@@ -22,4 +22,6 @@ moxLoadTest_CPPFLAGS = \
 
 moxLoadTest_LDFLAGS = libmoxBase.a $(AM_LDFLAGS) $(gtest_LIBS) -lgtest_main
 
+include test/mox/xml/moxLoad.mk
+
 endif

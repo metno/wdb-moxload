@@ -33,6 +33,8 @@ moxLoad_CPPFLAGS = $(AM_CPPFLAGS) $(libpqxx_CFLAGS)
 moxLoad_LDFLAGS = libmoxBase.a $(AM_LDFLAGS) $(libpqxx_LIBS)
 moxLoad_SOURCES =
 
+EXTRA_DIST =
+
 include src/moxLoad.mk
 include etc/moxLoad.mk
 include test/moxLoad.mk
