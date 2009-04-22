@@ -45,18 +45,28 @@
 namespace mox
 {
 
+void Parser::setup(const std::string & parameterConfigFile)
+{
+	std::ifstream parameters(parameterConfigFile.c_str());
+	if ( ! parameters )
+		throw std::runtime_error("Unable to find file: " + parameterConfigFile);
+	converter_ = boost::shared_ptr<MoxParameterConverter>(new MoxParameterConverter(parameters));
+}
 
+Parser::Parser(const std::string & parameterConfigFile)
+{
+	setup(parameterConfigFile);
+}
 
-ForecastCollectionPtr parse(QIODevice & stream)
+Parser::Parser()
+{
+	setup(SYSCONFDIR"/wdbFromMox.conf");
+}
+
+ForecastCollectionPtr Parser::parse(QIODevice & stream) const
 {
 	QXmlStreamReader reader(&stream);
-
-	std::ifstream parameters(SYSCONFDIR"/wdbFromMox.conf");
-	if ( ! parameters )
-		throw std::runtime_error("Unable to find file: "SYSCONFDIR"/wdbFromMox.conf");
-	boost::shared_ptr<MoxParameterConverter> converter(new MoxParameterConverter(parameters));
-
-	ForecastCollector collector(converter);
+	ForecastCollector collector(converter_);
 
 	mox::DocumentHandler h(collector);
 	h.handle(reader);
@@ -64,14 +74,14 @@ ForecastCollectionPtr parse(QIODevice & stream)
 	return collector.forecasts();
 }
 
-ForecastCollectionPtr parseFile(const std::string & fileName)
+ForecastCollectionPtr Parser::parseFile(const std::string & fileName) const
 {
 	QFile f(fileName.c_str());
 	f.open(QFile::ReadOnly);
 	return parse(f);
 }
 
-ForecastCollectionPtr parseStdin()
+ForecastCollectionPtr Parser::parseStdin() const
 {
 	QFile f;
 	f.open(0, QFile::ReadOnly);

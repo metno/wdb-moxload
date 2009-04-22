@@ -107,6 +107,8 @@ int main(int argc, char ** argv)
 
 	try
 	{
+		mox::Parser parser;
+
 		boost::scoped_ptr<pqxx::connection> conn(
 				conf.output().list ? 0 :
 				new pqxx::connection(conf.database().pqDatabaseConnection()));
@@ -116,9 +118,9 @@ int main(int argc, char ** argv)
 			mox::ForecastCollectionPtr forecasts;
 			const std::string fileName = it->file_string();
 			if ( fileName == "-" )
-				forecasts = mox::parseStdin();
+				forecasts = parser.parseStdin();
 			else
-				forecasts = mox::parseFile(it->file_string());
+				forecasts = parser.parseFile(it->file_string());
 
 			if ( conf.output().list )
 			{

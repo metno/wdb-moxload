@@ -36,17 +36,31 @@
 
 using boost::posix_time::time_from_string;
 
-const mox::ForecastCollectionPtr parseFile(const char * fileName)
+class ParserTest : public testing::Test
 {
-	QFile xmlFile(fileName);
-	xmlFile.open(QFile::ReadOnly);
-	const mox::ForecastCollectionPtr forecasts = mox::parse(xmlFile);
-	return forecasts;
-}
+public:
+	ParserTest() :
+		parser(SRCDIR"/etc/wdbFromMox.conf")
+	{}
 
-TEST(ParserTest, DISABLED_readParameterNames)
+protected:
+
+	mox::Parser parser;
+
+	const mox::ForecastCollectionPtr parseFile(const char * fileName)
+	{
+		QFile xmlFile(fileName);
+		xmlFile.open(QFile::ReadOnly);
+		const mox::ForecastCollectionPtr forecasts = parser.parse(xmlFile);
+		return forecasts;
+	}
+
+};
+
+
+TEST_F(ParserTest, readParameterNames)
 {
-	const mox::ForecastCollectionPtr data = parseFile("../test/mox/xml/bergen.xml");
+	const mox::ForecastCollectionPtr data = parseFile(SRCDIR"/test/mox/xml/bergen.xml");
 	const mox::ForecastCollection & f = * data;
 
 	ASSERT_EQ(11u, f.size());
@@ -70,9 +84,9 @@ TEST(ParserTest, DISABLED_readParameterNames)
 	}
 }
 
-TEST(ParserTest, DISABLED_readAnalysisTime)
+TEST_F(ParserTest, readAnalysisTime)
 {
-	const mox::ForecastCollectionPtr data = parseFile("../test/mox/xml/bergen.xml");
+	const mox::ForecastCollectionPtr data = parseFile(SRCDIR"/test/mox/xml/bergen.xml");
 	const mox::ForecastCollection & f = * data;
 	ASSERT_EQ(11u, f.size());
 
@@ -82,9 +96,9 @@ TEST(ParserTest, DISABLED_readAnalysisTime)
 		ASSERT_EQ(expectedAnalysisTime, it->analysisTime()) << " at parameter " << it->valueParameter();
 }
 
-TEST(ParserTest, DISABLED_readValidTime)
+TEST_F(ParserTest, readValidTime)
 {
-	const mox::ForecastCollectionPtr data = parseFile("../test/mox/xml/bergen.xml");
+	const mox::ForecastCollectionPtr data = parseFile(SRCDIR"/test/mox/xml/bergen.xml");
 	const mox::ForecastCollection & f = * data;
 	ASSERT_EQ(11u, f.size());
 
@@ -102,9 +116,9 @@ TEST(ParserTest, DISABLED_readValidTime)
 	ASSERT_EQ(expectedValidTimeTo, f.back().validTo());
 }
 
-TEST(ParserTest, DISABLED_readPosition)
+TEST_F(ParserTest, readPosition)
 {
-	const mox::ForecastCollectionPtr data = parseFile("../test/mox/xml/bergen.xml");
+	const mox::ForecastCollectionPtr data = parseFile(SRCDIR"/test/mox/xml/bergen.xml");
 	const mox::ForecastCollection & f = * data;
 	ASSERT_EQ(11u, f.size());
 
@@ -115,9 +129,9 @@ TEST(ParserTest, DISABLED_readPosition)
 	}
 }
 
-TEST(ParserTest, DISABLED_readPositionName)
+TEST_F(ParserTest, readPositionName)
 {
-	const mox::ForecastCollectionPtr data = parseFile("../test/mox/xml/bergen.xml");
+	const mox::ForecastCollectionPtr data = parseFile(SRCDIR"/test/mox/xml/bergen.xml");
 	const mox::ForecastCollection & f = * data;
 	ASSERT_EQ(11u, f.size());
 

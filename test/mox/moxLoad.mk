@@ -17,7 +17,7 @@ moxLoadTest_SOURCES = \
 	test/mox/ValueParameterTest.cpp
 
 moxLoadTest_CPPFLAGS = \
-	-DCONFIG_FILE=\"$(top_srcdir)/etc/wdbFromMox.conf\" \
+	-DSRCDIR=\"$(top_srcdir)\" \
 	$(AM_CPPFLAGS) $(gtest_CFLAGS)
 
 moxLoadTest_LDFLAGS = libmoxBase.a $(AM_LDFLAGS) $(gtest_LIBS) -lgtest_main

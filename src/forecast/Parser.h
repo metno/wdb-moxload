@@ -30,19 +30,32 @@
 #define MOX_PARSER_H_
 
 #include "ForecastCollection.h"
+#include <boost/shared_ptr.hpp>
 #include <string>
 
 class QIODevice;
-class QXmlStreamReader;
+class MoxParameterConverter;
 
 namespace mox
 {
 
-ForecastCollectionPtr parse(QIODevice & stream);
+class Parser
+{
+public:
+	Parser();
+	explicit Parser(const std::string & parameterConfigFile);
 
-ForecastCollectionPtr parseFile(const std::string & fileName);
+	ForecastCollectionPtr parse(QIODevice & stream) const;
 
-ForecastCollectionPtr parseStdin();
+	ForecastCollectionPtr parseFile(const std::string & fileName) const;
+
+	ForecastCollectionPtr parseStdin() const;
+
+private:
+	void setup(const std::string & parameterConfigFile);
+
+	boost::shared_ptr<MoxParameterConverter> converter_;
+};
 
 }
 
