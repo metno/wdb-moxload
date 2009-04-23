@@ -55,27 +55,16 @@ std::string location(double latitude, double longitude)
 
 Forecast::Forecast(const ForecastLocation & location,
 		const Time & analysisTime, const Time & validFrom,
-		const Time & validTo, const std::string & valueParameter, double value,
+		const Time & validTo, const std::string & moxValueParameter, double value,
 		boost::shared_ptr<MoxParameterConverter> converter) :
 	location_(location), analysisTime_(analysisTime), validFrom_(validFrom),
-			validTo_(validTo), valueParameter_(valueParameter), value_(value),
+			validTo_(validTo), moxValueParameter_(moxValueParameter), value_(value),
 			converter_(converter)
 {
 }
 
 std::string Forecast::getWciWriteQuery() const
 {
-	//	wci.write(
-	//		value_ 			oid,
-	//		placename_ 		text,
-	//		referencetime_ 	timestamp with time zone,
-	//		validFrom_ 		timestamp with time zone,
-	//		validTo_ 		timestamp with time zone,
-	//		valueparameter_ text,
-	//		levelparameter_ text,
-	//		levelFrom_ 		real,
-	//		levelTo_ 		real
-	//	)
 	std::ostringstream query;
 	query << "SELECT wci.write(";
 	query << value() << "::double precision" << sep;
@@ -83,7 +72,7 @@ std::string Forecast::getWciWriteQuery() const
 	query << quote(analysisTime()) << sep;
 	query << quote(validFrom()) << sep;
 	query << quote(validTo()) << sep;
-	query << quote(valueParameter()) << sep;
+	query << quote(wdbValueParameter()) << sep;
 	query << quote(levelParameter()) << sep;
 	query << levelFrom() << sep;
 	query << levelTo() << ")";
@@ -102,24 +91,30 @@ std::string Forecast::getLoadPlaceDefinitionQuery() const
 	return query.str();
 }
 
-const std::string Forecast::valueParameter() const
+bool Forecast::shouldWriteToDatabase() const
 {
-	return converter_->wdbValueParameter(valueParameter_);
+	return converter_->hasConversionForMoxParameter(moxValueParameter_);
+}
+
+
+const std::string Forecast::wdbValueParameter() const
+{
+	return converter_->wdbValueParameter(moxValueParameter_);
 }
 
 const std::string Forecast::levelParameter() const
 {
-	return converter_->wdbLevelParameter(valueParameter_);
+	return converter_->wdbLevelParameter(moxValueParameter_);
 }
 
 double Forecast::levelFrom() const
 {
-	return converter_->levelFrom(valueParameter_);
+	return converter_->levelFrom(moxValueParameter_);
 }
 
 double Forecast::levelTo() const
 {
-	return converter_->levelTo(valueParameter_);
+	return converter_->levelTo(moxValueParameter_);
 }
 
 }

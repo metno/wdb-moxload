@@ -27,6 +27,7 @@
  */
 
 #include "AnalysisTimeHandler.h"
+#include <gml/TimeInstantHandler.h>
 #include <forecast/ForecastCollector.h>
 #include "namespace.h"
 #include <QXmlStreamReader>
@@ -39,14 +40,10 @@ AnalysisTimeHandler::AnalysisTimeHandler(mox::ForecastCollector & processor)	:
 {
 }
 
-AnalysisTimeHandler::~AnalysisTimeHandler()
+void AnalysisTimeHandler::handle(QXmlStreamReader & reader)
 {
-}
-
-void AnalysisTimeHandler::handleStartTag(QXmlStreamReader & reader)
-{
-	Forecast::Time t = boost::posix_time::time_from_string("2005-Aug-11 10:43:00");
-	collector.setAnalysisTime(t);
+	gml::TimeInstantPropertyTypeHandler::handle(reader);
+	collector.setAnalysisTime(timeInstant());
 }
 
 }

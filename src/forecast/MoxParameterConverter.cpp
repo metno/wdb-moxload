@@ -63,6 +63,12 @@ MoxParameterConverter::~MoxParameterConverter()
 {
 }
 
+bool MoxParameterConverter::hasConversionForMoxParameter(const std::string & moxValueParameter) const
+{
+	return conversion_.find(moxValueParameter) != conversion_.end();
+}
+
+
 std::string MoxParameterConverter::wdbValueParameter(const std::string & moxValueParameter) const
 {
 	return getParameter_(moxValueParameter).valueParameter;

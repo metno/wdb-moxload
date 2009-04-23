@@ -29,6 +29,7 @@
 #include "ForecastMemberTypeHandler.h"
 #include "ForecastTypeHandler.h"
 #include <metno/LocationForecastHandler.h>
+#include <metno/OceanForecastHandler.h>
 #include "namespace.h"
 
 namespace mox
@@ -39,6 +40,7 @@ ForecastMemberTypeHandler::ForecastMemberTypeHandler(ForecastCollector & process
 {
 	subHandlers.push_back(new ForecastTypeHandler(processor, "Forecast", moxNamespace));
 	subHandlers.push_back(new metno::LocationForecastHandler(processor));
+	subHandlers.push_back(new metno::OceanForecastHandler(processor));
 }
 
 }

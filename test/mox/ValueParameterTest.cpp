@@ -74,7 +74,7 @@ struct ValueParameterTestAirTemperature : public ValueParameterTest
 TEST_F(ValueParameterTestAirTemperature, valueParameterName)
 {
 	const mox::Forecast & forecast = standardQuery("<wdb:airTemperature uom=\"Cel\">31.0</wdb:airTemperature>");
-	ASSERT_EQ("air temperature", forecast.valueParameter());
+	ASSERT_EQ("air temperature", forecast.wdbValueParameter());
 }
 
 TEST_F(ValueParameterTestAirTemperature, valueParameterToLevelConversion)
@@ -89,7 +89,7 @@ TEST_F(ValueParameterTestAirTemperature, valueParameterToLevelConversion)
 TEST_F(ValueParameterTest, valueParameterName)
 {
 	const mox::Forecast & forecast = standardQuery("<wdb:airPressure uom=\"hPa\">1017.4</wdb:airPressure>");
-	ASSERT_EQ("air pressure", forecast.valueParameter());
+	ASSERT_EQ("air pressure", forecast.wdbValueParameter());
 }
 
 TEST_F(ValueParameterTest, valueParameterToLevelConversion)

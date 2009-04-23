@@ -45,9 +45,14 @@ void PointDataSaver::operator()(PointDataSaver::argument_type & t)
 
 	for ( mox::ForecastCollection::const_iterator it = forecasts_.begin(); it != forecasts_.end(); ++ it )
 	{
-		verifyPlaceDefinition(t, * it);
-
-		t.exec(it->getWciWriteQuery());
+		if ( it->shouldWriteToDatabase() )
+		{
+			std::cout << it->getWciWriteQuery() << std::endl;
+			verifyPlaceDefinition(t, * it);
+			t.exec(it->getWciWriteQuery());
+		}
+		else
+			std::cout << "Skipping " << it->moxValueParameter() << std::endl;
 	}
 	t.exec("SELECT wci.end()");
 }

@@ -30,14 +30,21 @@
 #define TIMEINSTANTPROPERTYTYPE_H_
 
 #include <mox/MoxTagHandler.h>
+#include <boost/date_time/posix_time/posix_time.hpp>
 
 namespace gml
 {
+
+class TimeInstantHandler;
 
 class TimeInstantPropertyTypeHandler: public mox::MoxTagHandler
 {
 public:
 	TimeInstantPropertyTypeHandler(mox::ForecastCollector & processor, const QString & tagName, const QString & tagNamespace);
+
+	const boost::posix_time::ptime & timeInstant() const;
+protected:
+	TimeInstantHandler * timeInstantHandler;
 };
 
 }

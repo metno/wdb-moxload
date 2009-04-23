@@ -35,11 +35,13 @@
 #include <gml/TimePrimitivePropertyTypeHandler.h>
 #include "ForecastMemberTypeHandler.h"
 #include "namespace.h"
+#include <gml/namespace.h>
 
 namespace mox
 {
 
 typedef mox::MoxTagHandler Handler;
+typedef Handler DescriptionHandler;
 typedef Handler ObservedPropertyHandler;
 typedef gml::PointPropertyTypeHandler ForecastPointHandler;
 typedef gml::TimeInstantPropertyTypeHandler IssueTimeHandler;
@@ -52,11 +54,12 @@ typedef ForecastMemberTypeHandler ForecastHandler;
 ForecastsTagHandler::ForecastsTagHandler(mox::ForecastCollector & processor) :
 	MoxTagHandler(processor, "Forecasts", moxNamespace)
 {
+	subHandlers.push_back(new DescriptionHandler(processor, "description", gml::gmlNamespace));
 	subHandlers.push_back(new ObservedPropertyHandler(processor, "procedure", moxNamespace));
 	subHandlers.push_back(new ObservedPropertyHandler(processor, "observedProperty", moxNamespace));
 	subHandlers.push_back(new ForecastPointHandler(processor, "forecastPoint", moxNamespace));
 	subHandlers.push_back(new AnalysisTimeHandler(processor));
-	subHandlers.push_back(new IssueTimeHandler(processor, "issueTime", moxNamespace));
+	subHandlers.push_back(new IssueTimeHandler(processor, "issueTime", moxNamespace));;
 	subHandlers.push_back(new NextIssueTimeHandler(processor, "nextIssueTime", moxNamespace));
 	subHandlers.push_back(new ValidTimeHandler(processor, "validTime", moxNamespace));
 	subHandlers.push_back(new ForecastHandler(processor, "forecast", moxNamespace));

@@ -37,7 +37,13 @@ namespace gml
 TimeInstantPropertyTypeHandler::TimeInstantPropertyTypeHandler(mox::ForecastCollector & processor, const QString & tagName, const QString & tagNamespace) :
 	mox::MoxTagHandler(processor, tagName, tagNamespace)
 {
-	subHandlers.push_back(new TimeInstantHandler(processor));
+	timeInstantHandler = new TimeInstantHandler(processor);
+	subHandlers.push_back(timeInstantHandler);
+}
+
+const boost::posix_time::ptime & TimeInstantPropertyTypeHandler::timeInstant() const
+{
+	return timeInstantHandler->timeInstant();
 }
 
 }

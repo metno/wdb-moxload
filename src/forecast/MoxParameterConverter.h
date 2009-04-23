@@ -41,6 +41,8 @@ public:
 	MoxParameterConverter(std::istream & conversionFile);
 	virtual ~MoxParameterConverter();
 
+	bool hasConversionForMoxParameter(const std::string & moxValueParameter) const;
+
 	std::string wdbValueParameter(const std::string & moxValueParameter) const;
 	std::string wdbLevelParameter(const std::string & moxValueParameter) const;
 	double levelFrom(const std::string & moxValueParameter) const;

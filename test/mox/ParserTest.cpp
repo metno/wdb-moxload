@@ -66,17 +66,17 @@ TEST_F(ParserTest, readParameterNames)
 	ASSERT_EQ(11u, f.size());
 	try
 	{
-		EXPECT_EQ("air pressure", f[0].valueParameter());
-		EXPECT_EQ("air temperature", f[1].valueParameter());
-		EXPECT_EQ("total cloud cover", f[2].valueParameter());
-		EXPECT_EQ("low cloud cover", f[3].valueParameter());
-		EXPECT_EQ("medium cloud cover", f[4].valueParameter());
-		EXPECT_EQ("high cloud cover", f[5].valueParameter());
-		EXPECT_EQ("fog cover", f[6].valueParameter());
-		EXPECT_EQ("relative humidity", f[7].valueParameter());
-		EXPECT_EQ("wind direction", f[8].valueParameter());
-		EXPECT_EQ("wind velocity", f[9].valueParameter());
-		EXPECT_EQ("accumulated precipitation surface density", f[10].valueParameter());
+		EXPECT_EQ("air pressure", f[0].wdbValueParameter());
+		EXPECT_EQ("air temperature", f[1].wdbValueParameter());
+		EXPECT_EQ("total cloud cover", f[2].wdbValueParameter());
+		EXPECT_EQ("low cloud cover", f[3].wdbValueParameter());
+		EXPECT_EQ("medium cloud cover", f[4].wdbValueParameter());
+		EXPECT_EQ("high cloud cover", f[5].wdbValueParameter());
+		EXPECT_EQ("fog cover", f[6].wdbValueParameter());
+		EXPECT_EQ("relative humidity", f[7].wdbValueParameter());
+		EXPECT_EQ("wind direction", f[8].wdbValueParameter());
+		EXPECT_EQ("wind velocity", f[9].wdbValueParameter());
+		EXPECT_EQ("accumulated precipitation surface density", f[10].wdbValueParameter());
 	}
 	catch ( std::exception & e )
 	{
@@ -84,16 +84,16 @@ TEST_F(ParserTest, readParameterNames)
 	}
 }
 
-TEST_F(ParserTest, readAnalysisTime)
+TEST_F(ParserTest, readIssueTime)
 {
 	const mox::ForecastCollectionPtr data = parseFile(SRCDIR"/test/mox/xml/bergen.xml");
 	const mox::ForecastCollection & f = * data;
 	ASSERT_EQ(11u, f.size());
 
-	mox::Forecast::Time expectedAnalysisTime = time_from_string("2005-08-11 10:43:00");
+	mox::Forecast::Time expectedIssueTime = time_from_string("2005-08-11 10:47:00");
 
 	for ( mox::ForecastCollection::const_iterator it = f.begin(); it != f.end(); ++ it )
-		ASSERT_EQ(expectedAnalysisTime, it->analysisTime()) << " at parameter " << it->valueParameter();
+		ASSERT_EQ(expectedIssueTime, it->analysisTime()) << " at parameter " << it->wdbValueParameter();
 }
 
 TEST_F(ParserTest, readValidTime)
@@ -109,8 +109,8 @@ TEST_F(ParserTest, readValidTime)
 	-- almostEnd;
 	for ( mox::ForecastCollection::const_iterator it = f.begin(); it != almostEnd; ++ it )
 	{
-		ASSERT_EQ(expectedValidTimeFrom, it->validFrom()) << " at parameter " << it->valueParameter();
-		ASSERT_EQ(expectedValidTimeTo, it->validTo()) << " at parameter " << it->valueParameter();
+		ASSERT_EQ(expectedValidTimeFrom, it->validFrom()) << " at parameter " << it->wdbValueParameter();
+		ASSERT_EQ(expectedValidTimeTo, it->validTo()) << " at parameter " << it->wdbValueParameter();
 	}
 	ASSERT_EQ(time_from_string("2009-02-10 09:00:00"), f.back().validFrom());
 	ASSERT_EQ(expectedValidTimeTo, f.back().validTo());

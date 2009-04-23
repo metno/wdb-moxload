@@ -24,29 +24,22 @@
  along with this program; if not, write to the Free Software
  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
  MA  02110-1301, USA
-*/
+ */
 
+#ifndef OCEANFORECASTHANDLER_H_
+#define OCEANFORECASTHANDLER_H_
 
-#ifdef HAVE_CONFIG_H
-#include <config.h>
-#endif
-#include "TestingMoxParameterConverter.h"
-#include <fstream>
-#include <stdexcept>
-#include <string>
+#include <mox/ForecastTypeHandler.h>
 
-boost::shared_ptr<MoxParameterConverter> & getConverter()
+namespace metno
 {
-	static boost::shared_ptr<MoxParameterConverter> converter;
-	if ( ! converter )
-	{
-		const std::string configFile = SRCDIR"/etc/wdbFromMox.conf";
-		std::ifstream params(configFile.c_str());
-		if ( ! params )
-			throw std::runtime_error("Unable to find file: " + configFile);
-		converter = boost::shared_ptr<MoxParameterConverter>(new MoxParameterConverter(params));
-	}
-	return converter;
+
+class OceanForecastHandler: public mox::ForecastTypeHandler
+{
+public:
+	OceanForecastHandler(mox::ForecastCollector & processor);
+};
+
 }
 
-
+#endif /* OCEANFORECASTHANDLER_H_ */

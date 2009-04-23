@@ -48,14 +48,14 @@ public:
 
 	Forecast(const ForecastLocation & location, const Time & analysisTime,
 			const Time & validFrom, const Time & validTo,
-			const std::string & valueParameter,
+			const std::string & moxValueParameter,
 			double value, boost::shared_ptr<MoxParameterConverter> converter);
 
 
 	std::string getWciWriteQuery() const;
 	std::string getLoadPlaceDefinitionQuery() const;
 
-
+	bool shouldWriteToDatabase() const;
 
 	// The following functions are meant for testing
 	const ForecastLocation & location() const { return location_; }
@@ -63,7 +63,8 @@ public:
 	const Time & validFrom() const { return validFrom_; }
 	const Time & validTo() const { return validTo_; }
 
-	const std::string valueParameter() const;
+	const std::string wdbValueParameter() const;
+	const std::string & moxValueParameter() const {  return moxValueParameter_; }
 	double value() const { return value_; }
 	const std::string levelParameter() const;
 	double levelFrom() const;
@@ -74,7 +75,7 @@ private:
 	Time analysisTime_;
 	Time validFrom_;
 	Time validTo_;
-	std::string valueParameter_;
+	std::string moxValueParameter_;
 	double value_;
 	boost::shared_ptr<MoxParameterConverter> converter_;
 };

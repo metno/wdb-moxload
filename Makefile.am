@@ -29,7 +29,8 @@ libmoxBase_a_SOURCES =
 
 wdblib_PROGRAMS = moxLoad
 moxLoad_CPPFLAGS = $(AM_CPPFLAGS) $(libpqxx_CFLAGS)
-moxLoad_LDFLAGS = libmoxBase.a $(AM_LDFLAGS) $(libpqxx_LIBS)
+moxLoad_LDFLAGS = $(AM_LDFLAGS) $(libpqxx_LIBS)
+moxLoad_LDADD = libmoxBase.a
 moxLoad_SOURCES =
 
 install-data-hook:

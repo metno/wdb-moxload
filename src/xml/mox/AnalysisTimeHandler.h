@@ -38,10 +38,8 @@ class AnalysisTimeHandler: public gml::TimeInstantPropertyTypeHandler
 {
 public:
 	explicit AnalysisTimeHandler(mox::ForecastCollector & processor);
-	virtual ~AnalysisTimeHandler();
 
-protected:
-	virtual void handleStartTag(QXmlStreamReader & reader);
+	virtual void handle(QXmlStreamReader & reader);
 };
 
 }
