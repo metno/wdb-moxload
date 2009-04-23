@@ -28,28 +28,13 @@
 
 #include "TimeInstantHandler.h"
 #include "namespace.h"
+#include <util/timeConversion.h>
 #include <QXmlStreamReader>
 #include <boost/date_time/posix_time/posix_time.hpp>
 #include <stdexcept>
 
 namespace gml
 {
-
-namespace
-{
-using namespace boost::posix_time;
-
-ptime getPtime(QString t)
-{
-	t.replace(QChar('T'), QChar(' '), Qt::CaseInsensitive);
-	if ( t.endsWith('Z', Qt::CaseInsensitive) )
-		t.chop(1);
-
-	// TODO: Zone handling
-
-	return time_from_string(t.toStdString());
-}
-}
 
 
 TimeInstantHandler::TimeInstantHandler(mox::ForecastCollector & processor) :

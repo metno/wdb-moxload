@@ -32,7 +32,7 @@
 #include <sstream>
 
 
-TEST(ForecastTest, generateWciRead)
+TEST(ForecastTest, generateWciWrite)
 {
 //	Forecast(double latitude, double longitude, const Time & analysisTime,
 //			const Time & validFrom, const Time & validTo,
@@ -61,6 +61,34 @@ TEST(ForecastTest, generateWciRead)
 	const std::string expectedResult = expected.str();
 
 	ASSERT_EQ(expectedResult, f.getWciWriteQuery());
+}
+
+TEST(ForecastTest, overrideReferenceTime)
+{
+	ForecastLocation location("oslo", 10.7464, 59.9111);
+
+	mox::Forecast::Time referenceTime = boost::posix_time::time_from_string("2009-04-21 06:00:00");
+	mox::Forecast::Time validFrom = boost::posix_time::time_from_string("2009-04-21 12:00:00");
+	mox::Forecast::Time validTo = boost::posix_time::time_from_string("2009-04-21 18:00:00");
+
+	mox::Forecast f(location, referenceTime, validFrom, validTo, "humidity", 93.3, getConverter());
+
+	mox::Forecast::Time overrideReferenceTime = boost::posix_time::time_from_string("2009-07-31 06:00:00");
+
+	std::ostringstream expected;
+	expected << "SELECT wci.write(93.3::double precision, ";
+	//expected << "geomfromtext('POINT(14 15)'), ";
+	expected << "'oslo', ";
+	expected << "'" << overrideReferenceTime << "', ";
+	expected << "'" << validFrom << "', ";
+	expected << "'" << validTo << "', ";
+	expected << "'relative humidity', ";
+	expected << "'height above ground distance', ";
+	expected << "2, 2)";
+
+	const std::string expectedResult = expected.str();
+
+	ASSERT_EQ(expectedResult, f.getWciWriteQuery(overrideReferenceTime));
 }
 
 TEST(ForecastTest, generateLoadPlaceDefinition)

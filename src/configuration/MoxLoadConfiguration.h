@@ -26,27 +26,28 @@
  MA  02110-1301, USA
  */
 
-#ifndef POINTDATASAVER_H_
-#define POINTDATASAVER_H_
+#ifndef MOXLOADCONFIGURATION_H_
+#define MOXLOADCONFIGURATION_H_
 
-#include <pqxx/pqxx>
-#include <forecast/ForecastCollection.h>
+#include <wdb/LoaderConfiguration.h>
+#include <string>
 
-class PointDataSaver : public pqxx::transactor<>
+class MoxLoadConfiguration : public wdb::LoaderConfiguration
 {
 public:
-	PointDataSaver(const std::string & referenceTime, const std::string & dataProvider, bool loadPlaceDefinition, const mox::ForecastCollection & forecasts);
-	virtual ~PointDataSaver();
+	explicit MoxLoadConfiguration(const std::string & defaultDataProvider = "moxLoad");
 
-	void operator()(argument_type & t);
+	struct MoxLoadingOptions
+	{
+		std::string referenceTime;
+	};
+
+	const MoxLoadingOptions & moxLoading() const { return moxLoading_; }
+
+
 
 private:
-	void verifyPlaceDefinition(argument_type & t, const mox::Forecast & forecast);
-
-	boost::posix_time::ptime referenceTime_;
-	std::string dataProvider_;
-	bool loadPlaceDefinition_;
-	const mox::ForecastCollection & forecasts_;
+	MoxLoadingOptions moxLoading_;
 };
 
-#endif /* POINTDATASAVER_H_ */
+#endif /* MOXLOADCONFIGURATION_H_ */

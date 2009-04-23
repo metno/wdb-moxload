@@ -84,16 +84,16 @@ TEST_F(ParserTest, readParameterNames)
 	}
 }
 
-TEST_F(ParserTest, readIssueTime)
+TEST_F(ParserTest, readAnalysisTime)
 {
 	const mox::ForecastCollectionPtr data = parseFile(SRCDIR"/test/mox/xml/bergen.xml");
 	const mox::ForecastCollection & f = * data;
 	ASSERT_EQ(11u, f.size());
 
-	mox::Forecast::Time expectedIssueTime = time_from_string("2005-08-11 10:47:00");
+	mox::Forecast::Time expectedAnalysisTime = time_from_string("2005-08-11 10:47:00");
 
 	for ( mox::ForecastCollection::const_iterator it = f.begin(); it != f.end(); ++ it )
-		ASSERT_EQ(expectedIssueTime, it->analysisTime()) << " at parameter " << it->wdbValueParameter();
+		ASSERT_EQ(expectedAnalysisTime, it->analysisTime()) << " at parameter " << it->wdbValueParameter();
 }
 
 TEST_F(ParserTest, readValidTime)

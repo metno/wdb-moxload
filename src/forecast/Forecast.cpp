@@ -63,13 +63,16 @@ Forecast::Forecast(const ForecastLocation & location,
 {
 }
 
-std::string Forecast::getWciWriteQuery() const
+std::string Forecast::getWciWriteQuery(const Time & referenceTime) const
 {
 	std::ostringstream query;
 	query << "SELECT wci.write(";
 	query << value() << "::double precision" << sep;
 	query << quote(location_.locationName()) << sep;
-	query << quote(analysisTime()) << sep;
+	if ( referenceTime.is_not_a_date_time() )
+		query << quote(analysisTime()) << sep;
+	else
+		query << quote(referenceTime) << sep;
 	query << quote(validFrom()) << sep;
 	query << quote(validTo()) << sep;
 	query << quote(wdbValueParameter()) << sep;

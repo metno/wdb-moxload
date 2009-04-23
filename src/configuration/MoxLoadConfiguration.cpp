@@ -26,27 +26,30 @@
  MA  02110-1301, USA
  */
 
-#ifndef POINTDATASAVER_H_
-#define POINTDATASAVER_H_
+#include "MoxLoadConfiguration.h"
 
-#include <pqxx/pqxx>
-#include <forecast/ForecastCollection.h>
 
-class PointDataSaver : public pqxx::transactor<>
+namespace
 {
-public:
-	PointDataSaver(const std::string & referenceTime, const std::string & dataProvider, bool loadPlaceDefinition, const mox::ForecastCollection & forecasts);
-	virtual ~PointDataSaver();
+using namespace boost::program_options;
 
-	void operator()(argument_type & t);
+options_description
+getMoxLoading( MoxLoadConfiguration::MoxLoadingOptions & out )
+{
+    options_description input( "Mox Loading" );
+    input.add_options()
+    ( "referenceTime,t", value<std::string>( & out.referenceTime ), "Store data into database using the given reference time, instead of whatever the given document(s) say" )
+    ;
 
-private:
-	void verifyPlaceDefinition(argument_type & t, const mox::Forecast & forecast);
+	return input;
+}
+}
 
-	boost::posix_time::ptime referenceTime_;
-	std::string dataProvider_;
-	bool loadPlaceDefinition_;
-	const mox::ForecastCollection & forecasts_;
-};
 
-#endif /* POINTDATASAVER_H_ */
+MoxLoadConfiguration::MoxLoadConfiguration(const std::string & defaultDataProvider) :
+	wdb::LoaderConfiguration(defaultDataProvider)
+{
+	cmdOptions().add( getMoxLoading( moxLoading_ ) );
+	configOptions().add( getMoxLoading( moxLoading_ ) );
+	shownOptions().add( getMoxLoading( moxLoading_ ) );
+}

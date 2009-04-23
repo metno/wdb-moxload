@@ -52,7 +52,7 @@ public:
 			double value, boost::shared_ptr<MoxParameterConverter> converter);
 
 
-	std::string getWciWriteQuery() const;
+	std::string getWciWriteQuery(const Time & referenceTime = Time()) const;
 	std::string getLoadPlaceDefinitionQuery() const;
 
 	bool shouldWriteToDatabase() const;

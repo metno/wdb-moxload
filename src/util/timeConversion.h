@@ -24,29 +24,23 @@
  along with this program; if not, write to the Free Software
  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
  MA  02110-1301, USA
- */
+*/
 
-#ifndef POINTDATASAVER_H_
-#define POINTDATASAVER_H_
 
-#include <pqxx/pqxx>
-#include <forecast/ForecastCollection.h>
 
-class PointDataSaver : public pqxx::transactor<>
-{
-public:
-	PointDataSaver(const std::string & referenceTime, const std::string & dataProvider, bool loadPlaceDefinition, const mox::ForecastCollection & forecasts);
-	virtual ~PointDataSaver();
+#ifndef TIMECONVERSION_H_
+#define TIMECONVERSION_H_
 
-	void operator()(argument_type & t);
+#include <boost/date_time/posix_time/posix_time.hpp>
+#include <string>
 
-private:
-	void verifyPlaceDefinition(argument_type & t, const mox::Forecast & forecast);
+class QString;
 
-	boost::posix_time::ptime referenceTime_;
-	std::string dataProvider_;
-	bool loadPlaceDefinition_;
-	const mox::ForecastCollection & forecasts_;
-};
 
-#endif /* POINTDATASAVER_H_ */
+boost::posix_time::ptime getPtime(const std::string & t);
+
+boost::posix_time::ptime getPtime(const QString & t);
+
+
+
+#endif /* TIMECONVERSION_H_ */

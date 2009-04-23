@@ -31,7 +31,7 @@
 #endif
 #include "forecast/Parser.h"
 #include "database/PointDataSaver.h"
-#include <wdb/LoaderConfiguration.h>
+#include "configuration/MoxLoadConfiguration.h"
 #include <wdbLogHandler.h>
 #include <QFile>
 #include <pqxx/pqxx>
@@ -74,7 +74,7 @@ void help( const boost::program_options::options_description & options, ostream 
 
 int main(int argc, char ** argv)
 {
-	wdb::LoaderConfiguration conf("moxLoad");
+	MoxLoadConfiguration conf;
 	try
     {
     	conf.parse( argc, argv );
@@ -130,7 +130,7 @@ int main(int argc, char ** argv)
 			}
 			else
 			{
-				PointDataSaver s(conf.loading().dataProvider, conf.loading().loadPlaceDefinition, * forecasts);
+				PointDataSaver s(conf.moxLoading().referenceTime, conf.loading().dataProvider, conf.loading().loadPlaceDefinition, * forecasts);
 				conn->perform(s);
 			}
 		}

@@ -24,29 +24,24 @@
  along with this program; if not, write to the Free Software
  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
  MA  02110-1301, USA
- */
+*/
 
-#ifndef POINTDATASAVER_H_
-#define POINTDATASAVER_H_
+#include "timeConversion.h"
+#include <QString>
+#include <boost/algorithm/string.hpp>
 
-#include <pqxx/pqxx>
-#include <forecast/ForecastCollection.h>
-
-class PointDataSaver : public pqxx::transactor<>
+boost::posix_time::ptime getPtime(const std::string & t)
 {
-public:
-	PointDataSaver(const std::string & referenceTime, const std::string & dataProvider, bool loadPlaceDefinition, const mox::ForecastCollection & forecasts);
-	virtual ~PointDataSaver();
+	std::string time = boost::algorithm::ireplace_first_copy(t, "T", " ");
+	const char last = * time.rbegin();
+	if ( last == 'z' or last == 'Z' )
+		time = time.substr(0, time.size() -1);
 
-	void operator()(argument_type & t);
+	return boost::posix_time::time_from_string(time);
+}
 
-private:
-	void verifyPlaceDefinition(argument_type & t, const mox::Forecast & forecast);
+boost::posix_time::ptime getPtime(const QString & t)
+{
+	return getPtime(t.toStdString());
+}
 
-	boost::posix_time::ptime referenceTime_;
-	std::string dataProvider_;
-	bool loadPlaceDefinition_;
-	const mox::ForecastCollection & forecasts_;
-};
-
-#endif /* POINTDATASAVER_H_ */

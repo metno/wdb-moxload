@@ -27,12 +27,24 @@
  */
 
 #include "PointDataSaver.h"
+#include <util/timeConversion.h>
 #include <boost/lexical_cast.hpp>
 #include <set>
 
-PointDataSaver::PointDataSaver(const std::string & dataProvider, bool loadPlaceDefinition, const mox::ForecastCollection & forecasts) :
+PointDataSaver::PointDataSaver(const std::string & referenceTime, const std::string & dataProvider, bool loadPlaceDefinition, const mox::ForecastCollection & forecasts) :
 	pqxx::transactor<>("PointDataSaver"), dataProvider_(dataProvider), loadPlaceDefinition_(loadPlaceDefinition), forecasts_(forecasts)
 {
+	if ( not referenceTime.empty() )
+	{
+		try
+		{
+			referenceTime_ = getPtime(referenceTime);
+		}
+		catch ( std::exception & )
+		{
+			throw std::logic_error("Invalid reference time specification: " + referenceTime);
+		}
+	}
 }
 
 PointDataSaver::~PointDataSaver()
@@ -47,9 +59,9 @@ void PointDataSaver::operator()(PointDataSaver::argument_type & t)
 	{
 		if ( it->shouldWriteToDatabase() )
 		{
-			std::cout << it->getWciWriteQuery() << std::endl;
+			//std::cout << it->getWciWriteQuery(referenceTime_) << std::endl;
 			verifyPlaceDefinition(t, * it);
-			t.exec(it->getWciWriteQuery());
+			t.exec(it->getWciWriteQuery(referenceTime_));
 		}
 		else
 			std::cout << "Skipping " << it->moxValueParameter() << std::endl;
