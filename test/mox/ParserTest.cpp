@@ -136,6 +136,6 @@ TEST_F(ParserTest, readPositionName)
 	ASSERT_EQ(11u, f.size());
 
 	for ( mox::ForecastCollection::const_iterator it = f.begin(); it != f.end(); ++ it )
-		ASSERT_EQ("bergen", it->location().locationName());
+		ASSERT_TRUE(it->location().locationName().empty());
 
 }

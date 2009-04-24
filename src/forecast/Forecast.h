@@ -57,6 +57,8 @@ public:
 
 	bool shouldWriteToDatabase() const;
 
+	void location(const ForecastLocation & loc) { location_ = loc; }
+
 	// The following functions are meant for testing
 	const ForecastLocation & location() const { return location_; }
 	const Time & analysisTime() const { return analysisTime_; }

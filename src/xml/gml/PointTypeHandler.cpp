@@ -62,16 +62,6 @@ public:
 
 void PointTypeHandler::handle(QXmlStreamReader & reader)
 {
-	const QXmlStreamAttributes & attr = reader.attributes();
-
-	QXmlStreamAttributes::const_iterator find = std::find_if(attr.begin(), attr.end(), is_tag(gmlNamespace,  "id"));
-	if ( find != attr.end() )
-	{
-		std::string locationName = find->value().toString().toStdString();
-		ForecastLocation loc(locationName);
-		collector.location() = loc;
-	}
-
 	while (not reader.atEnd())
 	{
 		QXmlStreamReader::TokenType token = reader.readNext();

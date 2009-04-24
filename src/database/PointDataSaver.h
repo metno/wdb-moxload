@@ -32,6 +32,8 @@
 #include <pqxx/pqxx>
 #include <forecast/ForecastCollection.h>
 
+class ForecastLocation;
+
 class PointDataSaver : public pqxx::transactor<>
 {
 public:
@@ -41,7 +43,11 @@ public:
 	void operator()(argument_type & t);
 
 private:
-	void verifyPlaceDefinition(argument_type & t, const mox::Forecast & forecast);
+	/**
+	 * @throw logic_error if place was unknown to database and loadPlaceDefinition is false
+	 * @return The stored name of the location
+	 */
+	const ForecastLocation & verifyPlaceDefinition(argument_type & t, const mox::Forecast & forecast);
 
 	boost::posix_time::ptime referenceTime_;
 	std::string dataProvider_;

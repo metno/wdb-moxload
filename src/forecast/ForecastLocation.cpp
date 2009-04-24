@@ -28,6 +28,7 @@
 
 #include "ForecastLocation.h"
 #include <boost/static_assert.hpp>
+#include <boost/algorithm/string.hpp>
 #include <limits>
 #include <sstream>
 
@@ -51,6 +52,11 @@ ForecastLocation::~ForecastLocation()
 {
 }
 
+std::string ForecastLocation::getDefaultLocationName() const
+{
+	return boost::to_lower_copy(wellKnownText());
+}
+
 std::string ForecastLocation::wellKnownText() const
 {
 	std::ostringstream wkt;
@@ -61,8 +67,8 @@ std::string ForecastLocation::wellKnownText() const
 
 bool operator < (const ForecastLocation & a, const ForecastLocation & b)
 {
-	if ( a.locationName() != b.locationName() )
-		return a.locationName() < b.locationName();
+//	if ( a.locationName() != b.locationName() )
+//		return a.locationName() < b.locationName();
 	if ( a.latitude() != b.latitude() )
 		return a.latitude() < b.latitude();
 	return a.longitude() < b.longitude();
@@ -70,9 +76,9 @@ bool operator < (const ForecastLocation & a, const ForecastLocation & b)
 
 bool operator == (const ForecastLocation & a, const ForecastLocation & b)
 {
-	return a.locationName() == b.locationName()
-	and a.latitude() == b.latitude()
-	and a.longitude() == b.longitude();
+	return //a.locationName() == b.locationName()	and
+	a.latitude() == b.latitude() and
+	a.longitude() == b.longitude();
 }
 
 

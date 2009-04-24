@@ -79,7 +79,7 @@ TEST_F(ForecastPointTest, test)
 
 	EXPECT_DOUBLE_EQ(38.99, loc.latitude());
 	EXPECT_DOUBLE_EQ(-77.99, loc.longitude());
-	EXPECT_EQ("oslo", loc.locationName());
+	EXPECT_TRUE(loc.locationName().empty());
 }
 
 TEST_F(ForecastPointTest, test2)
@@ -94,7 +94,7 @@ TEST_F(ForecastPointTest, test2)
 
 	EXPECT_DOUBLE_EQ(15.4161, loc.latitude());
 	EXPECT_DOUBLE_EQ(68.6931, loc.longitude());
-	EXPECT_EQ("sortland", loc.locationName());
+	EXPECT_TRUE(loc.locationName().empty());
 }
 
 TEST_F(ForecastPointTest, invalidContent)

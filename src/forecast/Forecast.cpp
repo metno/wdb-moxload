@@ -65,6 +65,9 @@ Forecast::Forecast(const ForecastLocation & location,
 
 std::string Forecast::getWciWriteQuery(const Time & referenceTime) const
 {
+	if ( location_.locationName().empty() )
+		throw std::logic_error("Write statement have no place name");
+
 	std::ostringstream query;
 	query << "SELECT wci.write(";
 	query << value() << "::double precision" << sep;
@@ -87,8 +90,8 @@ std::string Forecast::getLoadPlaceDefinitionQuery() const
 {
 	std::ostringstream query;
 	query << "SELECT wci.loadPlaceDefinition(";
-	query << quote(location_.locationName()) << sep;
-	query << "geomfromtext('POINT(" << location_.latitude() << ' ' << location_.longitude() << ")', 4030)";
+	query << quote(boost::to_lower_copy(location_.wellKnownText())) << sep;
+	query << "geomfromtext(" << quote(location_.wellKnownText()) << ", 4030)";
 	query << ")";
 
 	return query.str();

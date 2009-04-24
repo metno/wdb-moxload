@@ -59,9 +59,12 @@ void PointDataSaver::operator()(PointDataSaver::argument_type & t)
 	{
 		if ( it->shouldWriteToDatabase() )
 		{
-			//std::cout << it->getWciWriteQuery(referenceTime_) << std::endl;
-			verifyPlaceDefinition(t, * it);
-			t.exec(it->getWciWriteQuery(referenceTime_));
+			mox::Forecast f = * it;
+
+			const ForecastLocation & location = verifyPlaceDefinition(t, f);
+			f.location(location);
+			//std::cout << f.getWciWriteQuery(referenceTime_) << std::endl;
+			t.exec(f.getWciWriteQuery(referenceTime_));
 		}
 		else
 			std::cout << "Skipping " << it->moxValueParameter() << std::endl;
@@ -69,34 +72,36 @@ void PointDataSaver::operator()(PointDataSaver::argument_type & t)
 	t.exec("SELECT wci.end()");
 }
 
-void PointDataSaver::verifyPlaceDefinition(PointDataSaver::argument_type & t, const mox::Forecast & forecast)
+const ForecastLocation & PointDataSaver::verifyPlaceDefinition(PointDataSaver::argument_type & t, const mox::Forecast & forecast)
 {
 	// Used to prevent doing a lookup of the same location several times
-	static std::set<ForecastLocation> locationCache;
+	typedef std::set<ForecastLocation> LocationCache;
+	static LocationCache locationCache;
 
-	const ForecastLocation & location = forecast.location();
-
-	if ( locationCache.find(location) == locationCache.end() )
+	std::set<ForecastLocation>::const_iterator find = locationCache.find(forecast.location());
+	if ( find == locationCache.end() )
 	{
-		pqxx::result r = t.exec("SELECT placename, astext(placegeometry) FROM  wci.info('" + location.locationName() + "', NULL::wci.infoplace)");
+		ForecastLocation location = forecast.location(); // copy
+
+		const std::string query = "SELECT placename FROM  wci.info(NULL, NULL::wci.infoplace) WHERE astext(placegeometry)='" + location.wellKnownText() + "'";
+		pqxx::result r = t.exec(query);
 		if ( r.empty() )
 		{
 			if ( loadPlaceDefinition_ )
+			{
 				t.exec(forecast.getLoadPlaceDefinitionQuery());
+				location.locationName(location.getDefaultLocationName());
+			}
 			else
-				throw std::logic_error("Unknown location: " + location.locationName() + " at " + location.wellKnownText());
+				throw std::logic_error("Unknown location: " + location.wellKnownText());
 		}
 		else
 		{
-			const std::string storedLocation = r[0][1].as<std::string>();
-			if ( location.wellKnownText() != storedLocation )
-			{
-				std::ostringstream msg;
-				msg << "Database already havea location called <" << location.locationName() << "> with  geometry " << r[0][1] << ". ";
-				msg << "This does not match the given location of " << location.wellKnownText();
-				throw std::logic_error(msg.str());
-			}
+			location.locationName(r[0][0].as<std::string>());
+			std::cout << "Got location in database: " << location.wellKnownText() << ", name " << location.locationName() << std::endl;
 		}
-		locationCache.insert(location);
+		std::pair<LocationCache::iterator,bool> insert = locationCache.insert(location);
+		find = insert.first;
 	}
+	return * find;
 }

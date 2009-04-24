@@ -39,10 +39,13 @@ public:
 	ForecastLocation(const std::string & locationName, double latitude, double longitude);
 	~ForecastLocation();
 
+
+	std::string getDefaultLocationName() const;
 	const std::string & locationName() const { return locationName_; }
 	double latitude() const { return latitude_; }
 	double longitude() const { return longitude_; }
 
+	void locationName(const std::string & name) { locationName_ = name; }
 	void latitude(double lat) { latitude_ = lat; }
 	void longitude(double lon) { longitude_ = lon; }
 

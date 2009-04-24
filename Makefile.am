@@ -33,8 +33,11 @@ moxLoad_LDFLAGS = $(AM_LDFLAGS) $(libpqxx_LIBS)
 moxLoad_LDADD = libmoxBase.a
 moxLoad_SOURCES =
 
-install-data-hook:
+install-data-hook:	install-user
+	
+install-user:
 	$(WDB_ADMINISTRATION) createuser moxload write
+
 
 
 EXTRA_DIST =

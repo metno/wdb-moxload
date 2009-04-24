@@ -100,7 +100,7 @@ TEST(ForecastTest, generateLoadPlaceDefinition)
 
 	mox::Forecast f(location, referenceTime, validFrom, validTo, "humidity", 93.3, getConverter());
 
-	std::string expectedQuery = "SELECT wci.loadPlaceDefinition('oslo', geomfromtext('POINT(10.7464 59.9111)', 4030))";
+	std::string expectedQuery = "SELECT wci.loadPlaceDefinition('point(10.7464 59.9111)', geomfromtext('POINT(10.7464 59.9111)', 4030))";
 
 	ASSERT_EQ(expectedQuery, f.getLoadPlaceDefinitionQuery());
 }
@@ -114,7 +114,7 @@ TEST(ForecastTest, generateLoadPlaceDefinitionManyDecimalsInLocation)
 
 	mox::Forecast f(location, referenceTime, validFrom, validTo, "humidity", 93.3, getConverter());
 
-	std::string expectedQuery = "SELECT wci.loadPlaceDefinition('oslo', geomfromtext('POINT(10.7464 59.9111)', 4030))";
+	std::string expectedQuery = "SELECT wci.loadPlaceDefinition('point(10.7464 59.9111)', geomfromtext('POINT(10.7464 59.9111)', 4030))";
 
 	ASSERT_EQ(expectedQuery, f.getLoadPlaceDefinitionQuery());
 }
