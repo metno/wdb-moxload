@@ -63,6 +63,7 @@ struct WdbParameter
 	std::string levelParameter;
 };
 
+void parseParameterConversionLine(const std::string conversionLine, std::string & moxParameterNameOut, WdbParameter & out);
 void parse(const std::string & moxParameter, WdbParameter & out);
 
 #endif /* MOXMoxParameterConverter_H_ */

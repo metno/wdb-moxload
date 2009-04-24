@@ -28,6 +28,7 @@
 
 #include "PointDataSaver.h"
 #include <util/timeConversion.h>
+#include <wdbLogHandler.h>
 #include <boost/lexical_cast.hpp>
 #include <set>
 
@@ -53,6 +54,8 @@ PointDataSaver::~PointDataSaver()
 
 void PointDataSaver::operator()(PointDataSaver::argument_type & t)
 {
+	WDB_LOG & log = WDB_LOG::getInstance( "wdb.moxLoad.save" );
+
 	t.exec("SELECT wci.begin('" + dataProvider_ + "')");
 
 	for ( mox::ForecastCollection::const_iterator it = forecasts_.begin(); it != forecasts_.end(); ++ it )
@@ -67,7 +70,7 @@ void PointDataSaver::operator()(PointDataSaver::argument_type & t)
 			t.exec(f.getWciWriteQuery(referenceTime_));
 		}
 		else
-			std::cout << "Skipping " << it->moxValueParameter() << std::endl;
+			log.infoStream() << "Skipping " << it->moxValueParameter();
 	}
 	t.exec("SELECT wci.end()");
 }
@@ -78,6 +81,8 @@ const ForecastLocation & PointDataSaver::verifyPlaceDefinition(PointDataSaver::a
 	typedef std::set<ForecastLocation> LocationCache;
 	static LocationCache locationCache;
 
+	WDB_LOG & log = WDB_LOG::getInstance( "wdb.moxLoad.save" );
+
 	std::set<ForecastLocation>::const_iterator find = locationCache.find(forecast.location());
 	if ( find == locationCache.end() )
 	{
@@ -87,8 +92,10 @@ const ForecastLocation & PointDataSaver::verifyPlaceDefinition(PointDataSaver::a
 		pqxx::result r = t.exec(query);
 		if ( r.empty() )
 		{
+			log.debugStream() << "Location " << location.wellKnownText() << "was not in database";
 			if ( loadPlaceDefinition_ )
 			{
+				log.infoStream() << "Creating new placedefinition: " << location.wellKnownText();
 				t.exec(forecast.getLoadPlaceDefinitionQuery());
 				location.locationName(location.getDefaultLocationName());
 			}
@@ -98,7 +105,7 @@ const ForecastLocation & PointDataSaver::verifyPlaceDefinition(PointDataSaver::a
 		else
 		{
 			location.locationName(r[0][0].as<std::string>());
-			std::cout << "Got location in database: " << location.wellKnownText() << ", name " << location.locationName() << std::endl;
+			log.debugStream() << "Got location in database: " << location.wellKnownText() << ", name " << location.locationName();
 		}
 		std::pair<LocationCache::iterator,bool> insert = locationCache.insert(location);
 		find = insert.first;

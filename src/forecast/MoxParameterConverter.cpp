@@ -41,21 +41,13 @@ MoxParameterConverter::MoxParameterConverter(std::istream & conversionFile)
 	std::string line;
 	while ( std::getline(conversionFile, line) )
 	{
-		std::vector<std::string> elements;
-		boost::split(elements, line, boost::is_any_of("="));
-		for ( std::vector<std::string>::iterator it = elements.begin(); it != elements.end(); ++ it )
-			boost::trim(* it);
+		//void parseParameterConversionLine(const std::string conversionLine, std::string & moxParameterNameOut, WdbParameter & out)
 
-		if ( elements.size() == 1 )
-		{
-			if ( elements[0].empty() )
-				continue;
-			else throw std::runtime_error("Invalid line: " + line);
-		}
-		if ( elements.size() == 2 )
-			parse(elements[1], conversion_[elements[0]]);
-		else
-			throw std::runtime_error("Invalid line: " + line);
+		std::string moxName;
+		WdbParameter wdbParam;
+		parseParameterConversionLine(line, moxName, wdbParam);
+		if ( not moxName.empty() )
+			conversion_[moxName] = wdbParam;
 	}
 }
 
@@ -99,6 +91,27 @@ const WdbParameter & MoxParameterConverter::getParameter_(const std::string & mo
 	return f->second;
 }
 
+void parseParameterConversionLine(const std::string conversionLine, std::string & moxParameterNameOut, WdbParameter & out)
+{
+	std::vector<std::string> elements;
+	boost::split(elements, conversionLine, boost::is_any_of("="));
+	for ( std::vector<std::string>::iterator it = elements.begin(); it != elements.end(); ++ it )
+		boost::trim(* it);
+
+	if ( elements.size() == 1 )
+	{
+		if ( elements[0].empty() )
+			return;
+		else throw std::runtime_error("Invalid line: " + conversionLine);
+	}
+	if ( elements.size() == 2 )
+	{
+		parse(elements[1], out);
+		moxParameterNameOut = elements[0];
+	}
+	else
+		throw std::runtime_error("Invalid line: " + conversionLine);
+}
 
 void parse(const std::string & moxParameter, WdbParameter & out)
 {

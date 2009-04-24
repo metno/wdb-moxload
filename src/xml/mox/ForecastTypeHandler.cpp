@@ -30,11 +30,15 @@
 #include "namespace.h"
 #include <gml/PointPropertyTypeHandler.h>
 #include <gml/TimeInstantPropertyTypeHandler.h>
+#include "ValueParameterHandler.h"
 #include "AnalysisTimeHandler.h"
 #include "ValidTimeHandler.h"
 #include <gml/TimePrimitivePropertyTypeHandler.h>
-#include <boost/assign.hpp>
+#include <boost/algorithm/string.hpp>
+#include <fstream>
+#include <stdexcept>
 
+using namespace std;
 
 namespace mox
 {
@@ -44,23 +48,32 @@ typedef gml::PointPropertyTypeHandler ForecastPointHandler;
 typedef gml::TimeInstantPropertyTypeHandler IssueTimeHandler;
 typedef gml::TimeInstantPropertyTypeHandler NextIssueTimeHandler;
 
-ForecastTypeHandler::ForecastTypeHandler(ForecastCollector & processor, const QString & tagName, const QString & tagNamespace) :
+ForecastTypeHandler::ForecastTypeHandler(ForecastCollector & processor, const QString & tagName, const QString & tagNamespace, const std::string & parameterListFile) :
 	MoxTagHandler(processor, tagName, tagNamespace)
 {
-	using namespace boost::assign;
+	subHandlers.push_back(new ObservedPropertyHandler(processor, "procedure", moxNamespace));
+	subHandlers.push_back(new ObservedPropertyHandler(processor, "observedProperty", moxNamespace));
+	subHandlers.push_back(new ForecastPointHandler(processor, "forecastPoint", moxNamespace));
+	subHandlers.push_back(new AnalysisTimeHandler(processor));
+	subHandlers.push_back(new IssueTimeHandler(processor, "issueTime", moxNamespace));
+	subHandlers.push_back(new NextIssueTimeHandler(processor, "nextIssueTime", moxNamespace));
+	subHandlers.push_back(new ValidTimeHandler(processor));
 
-	HandlerList acceptedElements;
-	acceptedElements +=
-		new ObservedPropertyHandler(processor, "procedure", moxNamespace),
-		new ObservedPropertyHandler(processor, "observedProperty", moxNamespace),
-		new ForecastPointHandler(processor, "forecastPoint", moxNamespace),
-		new AnalysisTimeHandler(processor),
-		new IssueTimeHandler(processor, "issueTime", moxNamespace),
-		new NextIssueTimeHandler(processor, "nextIssueTime", moxNamespace),
-		new ValidTimeHandler(processor);
 
-	// Elements will be inserted before any elements from subclasses
-	subHandlers.insert(subHandlers.begin(), acceptedElements.begin(), acceptedElements.end());
+	ifstream conf(parameterListFile.c_str());
+	if ( ! conf )
+		throw runtime_error("Unable to open configuration file: " + parameterListFile);
+
+	string moxParameterName;
+	while ( conf >> moxParameterName )
+	{
+		boost::trim(moxParameterName);
+
+		if ( moxParameterName.empty() or moxParameterName[0] == '#' )
+			continue;
+
+		subHandlers.push_back(new mox::ValueParameterHandler(processor, moxParameterName.c_str(), mox::moxNamespace));
+	}
 }
 
 }

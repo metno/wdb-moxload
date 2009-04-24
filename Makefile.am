@@ -10,11 +10,12 @@
 ACLOCAL_AMFLAGS = 		-I config
 
 # Share directory organization
-wdbdatadir = 	$(datadir)/wdb
 wdblibdir = 	$(libdir)/wdb
+pkgsysconfdir = @sysconfdir@/moxLoad
+
 
 AM_CPPFLAGS = \
-	-DSYSCONFDIR=\"@sysconfdir@\" \
+	-DSYSCONFDIR=\"$(pkgsysconfdir)\" \
 	-I$(top_srcdir)/src/ -I$(top_srcdir)/src/xml \
 	$(wdb_CFLAGS) \
 	$(QtXml_CFLAGS) $(QtCore_CFLAGS)

@@ -26,17 +26,22 @@
  MA  02110-1301, USA
  */
 
+#ifdef HAVE_CONFIG_H
+#include <config.h>
+#endif
 #include "LocationForecastHandler.h"
 #include "namespace.h"
-#include <mox/ValueParameterHandler.h>
 #include <mox/namespace.h>
+
+using namespace std;
 
 namespace metno
 {
 
 LocationForecastHandler::LocationForecastHandler(mox::ForecastCollector & processor) :
-	mox::ForecastTypeHandler(processor, "LocationForecast", metnoNamespace)
+	mox::ForecastTypeHandler(processor, "LocationForecast", metnoNamespace, SYSCONFDIR"/LocationForecast.conf")
 {
+	/*
 	subHandlers.push_back(new mox::ValueParameterHandler(processor, "airPressure", mox::moxNamespace));
 	subHandlers.push_back(new mox::ValueParameterHandler(processor, "airTemperature", mox::moxNamespace));
 	subHandlers.push_back(new mox::ValueParameterHandler(processor, "totalCloudCover", mox::moxNamespace));
@@ -48,6 +53,7 @@ LocationForecastHandler::LocationForecastHandler(mox::ForecastCollector & proces
 	subHandlers.push_back(new mox::ValueParameterHandler(processor, "precipitation", mox::moxNamespace));
 	subHandlers.push_back(new mox::ValueParameterHandler(processor, "windDirection", mox::moxNamespace));
 	subHandlers.push_back(new mox::ValueParameterHandler(processor, "windSpeed", mox::moxNamespace));
+	*/
 }
 
 

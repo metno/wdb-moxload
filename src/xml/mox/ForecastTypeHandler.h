@@ -30,6 +30,7 @@
 #define FORECASTTYPEHANDLER_H_
 
 #include "MoxTagHandler.h"
+#include <string>
 
 namespace mox
 {
@@ -37,7 +38,7 @@ namespace mox
 class ForecastTypeHandler: public MoxTagHandler
 {
 public:
-	ForecastTypeHandler(ForecastCollector & processor, const QString & tagName, const QString & tagNamespace);
+	ForecastTypeHandler(ForecastCollector & processor, const QString & tagName, const QString & tagNamespace, const std::string & parameterListFile);
 };
 
 }

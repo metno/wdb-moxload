@@ -36,16 +36,16 @@ namespace metno
 {
 
 OceanForecastHandler::OceanForecastHandler(mox::ForecastCollector & processor) :
-	mox::ForecastTypeHandler(processor, "OceanForecast", metnoNamespace)
+	mox::ForecastTypeHandler(processor, "OceanForecast", metnoNamespace, SYSCONFDIR"/OceanForecast.conf")
 {
-	subHandlers.push_back(new mox::ValueParameterHandler(processor, "seaIcePresence", mox::moxNamespace));
-	subHandlers.push_back(new mox::ValueParameterHandler(processor, "meanTotalWaveDirection", mox::moxNamespace));
-	subHandlers.push_back(new mox::ValueParameterHandler(processor, "peakTotalWaveDirection", mox::moxNamespace));
-	subHandlers.push_back(new mox::ValueParameterHandler(processor, "significantTotalWaveHeight", mox::moxNamespace));
-	subHandlers.push_back(new mox::ValueParameterHandler(processor, "seaCurrentDirection", mox::moxNamespace));
-	subHandlers.push_back(new mox::ValueParameterHandler(processor, "seaCurrentSpeed", mox::moxNamespace));
-	subHandlers.push_back(new mox::ValueParameterHandler(processor, "seaSurfaceHeight", mox::moxNamespace));
-	subHandlers.push_back(new mox::ValueParameterHandler(processor, "seaTemperature", mox::moxNamespace));
+//	subHandlers.push_back(new mox::ValueParameterHandler(processor, "seaIcePresence", mox::moxNamespace));
+//	subHandlers.push_back(new mox::ValueParameterHandler(processor, "meanTotalWaveDirection", mox::moxNamespace));
+//	subHandlers.push_back(new mox::ValueParameterHandler(processor, "peakTotalWaveDirection", mox::moxNamespace));
+//	subHandlers.push_back(new mox::ValueParameterHandler(processor, "significantTotalWaveHeight", mox::moxNamespace));
+//	subHandlers.push_back(new mox::ValueParameterHandler(processor, "seaCurrentDirection", mox::moxNamespace));
+//	subHandlers.push_back(new mox::ValueParameterHandler(processor, "seaCurrentSpeed", mox::moxNamespace));
+//	subHandlers.push_back(new mox::ValueParameterHandler(processor, "seaSurfaceHeight", mox::moxNamespace));
+//	subHandlers.push_back(new mox::ValueParameterHandler(processor, "seaTemperature", mox::moxNamespace));
 
 	/* Correct order:
 	subHandlers.push_back(new mox::ValueParameterHandler(processor, "airPressure", mox::moxNamespace));
