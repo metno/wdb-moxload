@@ -24,22 +24,15 @@
  along with this program; if not, write to the Free Software
  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
  MA  02110-1301, USA
- */
+*/
 
-#ifndef LOCATIONFORECASTHANDLER_H_
-#define LOCATIONFORECASTHANDLER_H_
 
-#include <mox/ForecastTypeHandler.h>
 
-namespace metno
-{
+#ifndef CONFIGFILELOOKUP_H_
+#define CONFIGFILELOOKUP_H_
 
-class LocationForecastHandler: public mox::ForecastTypeHandler
-{
-public:
-	LocationForecastHandler(mox::ForecastCollector & processor);
-};
+#include <boost/filesystem/path.hpp>
 
-}
+boost::filesystem::path getConfigFile(const boost::filesystem::path & fileName);
 
-#endif /* LOCATIONFORECASTHANDLER_H_ */
+#endif /* CONFIGFILELOOKUP_H_ */

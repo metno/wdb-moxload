@@ -30,6 +30,7 @@
 #define FORECASTTYPEHANDLER_H_
 
 #include "MoxTagHandler.h"
+#include <boost/filesystem/path.hpp>
 #include <string>
 
 namespace mox
@@ -38,7 +39,7 @@ namespace mox
 class ForecastTypeHandler: public MoxTagHandler
 {
 public:
-	ForecastTypeHandler(ForecastCollector & processor, const QString & tagName, const QString & tagNamespace, const std::string & parameterListFile);
+	ForecastTypeHandler(ForecastCollector & processor, const QString & tagName, const QString & tagNamespace, const boost::filesystem::path & parameterListFile);
 };
 
 }

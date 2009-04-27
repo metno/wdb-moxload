@@ -16,6 +16,7 @@ pkgsysconfdir = @sysconfdir@/moxLoad
 
 AM_CPPFLAGS = \
 	-DSYSCONFDIR=\"$(pkgsysconfdir)\" \
+	-DSRCDIR=\"$(top_srcdir)\" \
 	-I$(top_srcdir)/src/ -I$(top_srcdir)/src/xml \
 	$(wdb_CFLAGS) \
 	$(QtXml_CFLAGS) $(QtCore_CFLAGS)

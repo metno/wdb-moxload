@@ -3,4 +3,4 @@ pkgsysconf_DATA = \
 	etc/LocationForecast.conf \
 	etc/OceanForecast.conf
 
-EXTRA_DIST += $(sysconf_DATA)
+EXTRA_DIST += $(pkgsysconf_DATA)

@@ -24,22 +24,30 @@
  along with this program; if not, write to the Free Software
  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
  MA  02110-1301, USA
- */
+*/
 
-#ifndef OCEANFORECASTHANDLER_H_
-#define OCEANFORECASTHANDLER_H_
+#ifdef HAVE_CONFIG_H
+#include <config.h>
+#endif
+#include <boost/filesystem.hpp>
 
-#include <mox/ForecastTypeHandler.h>
+namespace fs = boost::filesystem;
 
-namespace metno
+fs::path getConfigFile(const fs::path & fileName)
 {
+	static const fs::path sysConfDir = SYSCONFDIR;
 
-class OceanForecastHandler: public mox::ForecastTypeHandler
-{
-public:
-	OceanForecastHandler(mox::ForecastCollector & processor);
-};
+	fs::path wantedPath = sysConfDir/fileName;
+	if ( fs::exists(wantedPath) )
+		return wantedPath;
 
+
+	fs::path originalConfigDir = SRCDIR;
+	fs::path buildPath = originalConfigDir/"etc"/fileName;
+	if ( fs::exists(buildPath) )
+		return buildPath;
+
+	// Fail
+	//return wantedPath;
+	return buildPath;
 }
-
-#endif /* OCEANFORECASTHANDLER_H_ */

@@ -35,10 +35,13 @@
 #include "ValidTimeHandler.h"
 #include <gml/TimePrimitivePropertyTypeHandler.h>
 #include <boost/algorithm/string.hpp>
-#include <fstream>
+#include <boost/filesystem.hpp>
+#include <boost/filesystem/fstream.hpp>
+//#include <fstream>
 #include <stdexcept>
 
 using namespace std;
+namespace fs = boost::filesystem;
 
 namespace mox
 {
@@ -48,7 +51,7 @@ typedef gml::PointPropertyTypeHandler ForecastPointHandler;
 typedef gml::TimeInstantPropertyTypeHandler IssueTimeHandler;
 typedef gml::TimeInstantPropertyTypeHandler NextIssueTimeHandler;
 
-ForecastTypeHandler::ForecastTypeHandler(ForecastCollector & processor, const QString & tagName, const QString & tagNamespace, const std::string & parameterListFile) :
+ForecastTypeHandler::ForecastTypeHandler(ForecastCollector & processor, const QString & tagName, const QString & tagNamespace, const fs::path & parameterListFile) :
 	MoxTagHandler(processor, tagName, tagNamespace)
 {
 	subHandlers.push_back(new ObservedPropertyHandler(processor, "procedure", moxNamespace));
@@ -59,10 +62,9 @@ ForecastTypeHandler::ForecastTypeHandler(ForecastCollector & processor, const QS
 	subHandlers.push_back(new NextIssueTimeHandler(processor, "nextIssueTime", moxNamespace));
 	subHandlers.push_back(new ValidTimeHandler(processor));
 
-
-	ifstream conf(parameterListFile.c_str());
+	fs::ifstream conf(parameterListFile);
 	if ( ! conf )
-		throw runtime_error("Unable to open configuration file: " + parameterListFile);
+		throw runtime_error("Unable to open configuration file: " + parameterListFile.file_string());
 
 	string moxParameterName;
 	while ( conf >> moxParameterName )
