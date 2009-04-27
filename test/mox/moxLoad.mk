@@ -14,7 +14,10 @@ moxLoadTest_SOURCES = \
 	test/mox/TestingParser.cpp \
 	test/mox/TestingParser.h \
 	test/mox/ValidTimeTest.cpp \
-	test/mox/ValueParameterTest.cpp
+	test/mox/ValueParameterTest.cpp \
+	src/configuration/testConfigFileLookup.cpp \
+	src/configuration/configFileLookup.h	
+	
 
 moxLoadTest_CPPFLAGS = \
 	-DSRCDIR=\"$(top_srcdir)\" \

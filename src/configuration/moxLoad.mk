@@ -1,7 +1,7 @@
 moxLoad_SOURCES += \
 	src/configuration/MoxLoadConfiguration.cpp \
-	src/configuration/MoxLoadConfiguration.h
-	
-libmoxBase_a_SOURCES += \
+	src/configuration/MoxLoadConfiguration.h \
 	src/configuration/configFileLookup.cpp \
-	src/configuration/configFileLookup.h
+	src/configuration/configFileLookup.h	
+
+	

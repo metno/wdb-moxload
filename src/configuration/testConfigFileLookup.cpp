@@ -35,8 +35,10 @@ namespace fs = boost::filesystem;
 
 fs::path getConfigFile(const fs::path & fileName)
 {
-	static const fs::path sysConfDir = SYSCONFDIR;
+	static const fs::path sysConfDir = SRCDIR"/etc";
 
 	fs::path confPath = sysConfDir/fileName;
 	return confPath;
 }
+
+
