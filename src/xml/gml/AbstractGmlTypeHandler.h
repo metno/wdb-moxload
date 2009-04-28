@@ -24,28 +24,32 @@
  along with this program; if not, write to the Free Software
  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
  MA  02110-1301, USA
-*/
+ */
 
-#ifndef DOCUMENTHANDLER_H_
-#define DOCUMENTHANDLER_H_
+#ifndef ABSTRACTGMLTYPEHANDLER_H_
+#define ABSTRACTGMLTYPEHANDLER_H_
 
-#include "MoxTagHandler.h"
+#include <xml/TagHandler.h>
 
-namespace mox
+namespace gml
 {
 
 /**
- * Top-level handler for a mox document
+ * Defines subtags that all gml tags may have.
+ *
+ * @note this is not a (C++) abstract class. The class name refers to an xml
+ * element type. Therefore you may instantiate this class to create an element
+ * handler which ignores  its subelements
  */
-class DocumentHandler: public MoxTagHandler
+class AbstractGmlTypeHandler : public xml::TagHandler
 {
 public:
-	explicit DocumentHandler(ForecastCollector & processor);
+	AbstractGmlTypeHandler(const QString & tagName, const QString & tagNamespace);
 
 protected:
-	virtual void addSubHandlers();
+	virtual void handleStartTag(QXmlStreamReader & reader);
 };
 
 }
 
-#endif /* DOCUMENTHANDLER_H_ */
+#endif /* ABSTRACTGMLTYPEHANDLER_H_ */

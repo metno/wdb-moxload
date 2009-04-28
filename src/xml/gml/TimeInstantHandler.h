@@ -43,6 +43,10 @@ public:
 	const boost::posix_time::ptime & timeInstant() const { return time_; }
 
 	virtual void handle(QXmlStreamReader & reader);
+
+protected:
+	virtual void addSubHandlers();
+
 private:
 	boost::posix_time::ptime time_;
 };

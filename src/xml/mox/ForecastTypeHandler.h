@@ -40,6 +40,12 @@ class ForecastTypeHandler: public MoxTagHandler
 {
 public:
 	ForecastTypeHandler(ForecastCollector & processor, const QString & tagName, const QString & tagNamespace, const boost::filesystem::path & parameterListFile);
+
+protected:
+	virtual void addSubHandlers();
+
+private:
+	boost::filesystem::path parameterListFile_;
 };
 
 }

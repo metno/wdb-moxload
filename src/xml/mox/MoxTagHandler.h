@@ -8,14 +8,14 @@
 #ifndef MOXTAGHANDLER_H_
 #define MOXTAGHANDLER_H_
 
-#include <xml/TagHandler.h>
+#include <gml/AbstractGmlTypeHandler.h>
 
 namespace mox
 {
 
 class ForecastCollector;
 
-class MoxTagHandler: public xml::TagHandler
+class MoxTagHandler: public gml::AbstractGmlTypeHandler
 {
 public:
 	MoxTagHandler(ForecastCollector & collector, const QString & tagName, const QString & tagNamespace);

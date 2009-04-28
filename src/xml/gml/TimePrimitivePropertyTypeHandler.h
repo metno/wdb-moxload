@@ -45,6 +45,9 @@ public:
 	const boost::posix_time::ptime & timeFrom() const;
 	const boost::posix_time::ptime & timeTo() const;
 
+protected:
+	virtual void addSubHandlers();
+
 private:
 	TimeInstantHandler * instantHandler;
 	TimePeriodHandler * periodHandler;

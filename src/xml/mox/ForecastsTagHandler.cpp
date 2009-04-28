@@ -54,15 +54,21 @@ typedef ForecastMemberTypeHandler ForecastHandler;
 ForecastsTagHandler::ForecastsTagHandler(mox::ForecastCollector & processor) :
 	MoxTagHandler(processor, "Forecasts", moxNamespace)
 {
-	subHandlers.push_back(new DescriptionHandler(processor, "description", gml::gmlNamespace));
-	subHandlers.push_back(new ObservedPropertyHandler(processor, "procedure", moxNamespace));
-	subHandlers.push_back(new ObservedPropertyHandler(processor, "observedProperty", moxNamespace));
-	subHandlers.push_back(new ForecastPointHandler(processor, "forecastPoint", moxNamespace));
-	subHandlers.push_back(new AnalysisTimeHandler(processor));
-	subHandlers.push_back(new IssueTimeHandler(processor, "issueTime", moxNamespace));;
-	subHandlers.push_back(new NextIssueTimeHandler(processor, "nextIssueTime", moxNamespace));
-	subHandlers.push_back(new ValidTimeHandler(processor, "validTime", moxNamespace));
-	subHandlers.push_back(new ForecastHandler(processor, "forecast", moxNamespace));
+}
+
+void ForecastsTagHandler::addSubHandlers()
+{
+	MoxTagHandler::addSubHandlers();
+
+	subHandlers.push_back(new DescriptionHandler(collector, "description", gml::gmlNamespace));
+	subHandlers.push_back(new ObservedPropertyHandler(collector, "procedure", moxNamespace));
+	subHandlers.push_back(new ObservedPropertyHandler(collector, "observedProperty", moxNamespace));
+	subHandlers.push_back(new ForecastPointHandler(collector, "forecastPoint", moxNamespace));
+	subHandlers.push_back(new AnalysisTimeHandler(collector));
+	subHandlers.push_back(new IssueTimeHandler(collector, "issueTime", moxNamespace));;
+	subHandlers.push_back(new NextIssueTimeHandler(collector, "nextIssueTime", moxNamespace));
+	subHandlers.push_back(new ValidTimeHandler(collector, "validTime", moxNamespace));
+	subHandlers.push_back(new ForecastHandler(collector, "forecast", moxNamespace));
 }
 
 }

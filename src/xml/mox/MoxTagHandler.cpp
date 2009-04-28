@@ -12,7 +12,7 @@ namespace mox
 {
 
 MoxTagHandler::MoxTagHandler(ForecastCollector & collector, const QString & tagName, const QString & tagNamespace)
-	: xml::TagHandler(tagName, tagNamespace), collector(collector)
+	: gml::AbstractGmlTypeHandler(tagName, tagNamespace), collector(collector)
 {
 }
 

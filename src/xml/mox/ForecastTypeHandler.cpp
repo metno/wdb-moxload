@@ -52,19 +52,25 @@ typedef gml::TimeInstantPropertyTypeHandler IssueTimeHandler;
 typedef gml::TimeInstantPropertyTypeHandler NextIssueTimeHandler;
 
 ForecastTypeHandler::ForecastTypeHandler(ForecastCollector & processor, const QString & tagName, const QString & tagNamespace, const fs::path & parameterListFile) :
-	MoxTagHandler(processor, tagName, tagNamespace)
+	MoxTagHandler(processor, tagName, tagNamespace), parameterListFile_(parameterListFile)
 {
-	subHandlers.push_back(new ObservedPropertyHandler(processor, "procedure", moxNamespace));
-	subHandlers.push_back(new ObservedPropertyHandler(processor, "observedProperty", moxNamespace));
-	subHandlers.push_back(new ForecastPointHandler(processor, "forecastPoint", moxNamespace));
-	subHandlers.push_back(new AnalysisTimeHandler(processor));
-	subHandlers.push_back(new IssueTimeHandler(processor, "issueTime", moxNamespace));
-	subHandlers.push_back(new NextIssueTimeHandler(processor, "nextIssueTime", moxNamespace));
-	subHandlers.push_back(new ValidTimeHandler(processor));
+}
 
-	fs::ifstream conf(parameterListFile);
+void ForecastTypeHandler::addSubHandlers()
+{
+	MoxTagHandler::addSubHandlers();
+
+	subHandlers.push_back(new ObservedPropertyHandler(collector, "procedure", moxNamespace));
+	subHandlers.push_back(new ObservedPropertyHandler(collector, "observedProperty", moxNamespace));
+	subHandlers.push_back(new ForecastPointHandler(collector, "forecastPoint", moxNamespace));
+	subHandlers.push_back(new AnalysisTimeHandler(collector));
+	subHandlers.push_back(new IssueTimeHandler(collector, "issueTime", moxNamespace));
+	subHandlers.push_back(new NextIssueTimeHandler(collector, "nextIssueTime", moxNamespace));
+	subHandlers.push_back(new ValidTimeHandler(collector));
+
+	fs::ifstream conf(parameterListFile_);
 	if ( ! conf )
-		throw runtime_error("Unable to open configuration file: " + parameterListFile.file_string());
+		throw runtime_error("Unable to open configuration file: " + parameterListFile_.file_string());
 
 	string moxParameterName;
 	while ( conf >> moxParameterName )
@@ -74,7 +80,7 @@ ForecastTypeHandler::ForecastTypeHandler(ForecastCollector & processor, const QS
 		if ( moxParameterName.empty() or moxParameterName[0] == '#' )
 			continue;
 
-		subHandlers.push_back(new mox::ValueParameterHandler(processor, moxParameterName.c_str(), mox::moxNamespace));
+		subHandlers.push_back(new mox::ValueParameterHandler(collector, moxParameterName.c_str(), mox::moxNamespace));
 	}
 }
 

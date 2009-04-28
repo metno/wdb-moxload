@@ -1,0 +1,1310 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<mox:Forecasts
+   gml:id="pt0-20090422"
+   xmlns:mox="http://wdb.met.no/wdbxml"
+   xmlns:metno="http://api.met.no"
+   xmlns:gml="http://www.opengis.net/gml/3.2"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://wdb.met.no/wdbxml/schema/products.xsd">
+   <gml:description>Location forecast from api.met.no </gml:description>
+   <mox:procedure xlink:href="http://api.met.no/yr-procedure-desc.html"/>
+   <mox:observedProperty xlink:href="urn:x-ogc:def:phenomenon:weather"/>
+   <mox:forecastPoint>
+      <gml:Point gml:id="fp-0" srsName="urn:ogc:def:crs:epsg:4326">
+         <gml:pos>9.5800 60.1000 -2147483648</gml:pos>
+      </gml:Point>
+   </mox:forecastPoint>
+   <mox:issueTime>
+      <gml:TimeInstant gml:id="it-0">
+         <gml:timePosition>2009-04-22T10:12:50Z</gml:timePosition>
+      </gml:TimeInstant>
+   </mox:issueTime>
+   <mox:forecast>
+      <metno:OceanForecast gml:id="f-0">
+         <mox:validTime>
+            <gml:TimePeriod gml:id="vt-0">
+               <gml:begin>2009-04-22T11:00:00Z</gml:begin>
+               <gml:end>2009-04-22T11:00:00Z</gml:end>
+            </gml:TimePeriod>
+         </mox:validTime>
+<!-- provider: wam [wam 4km grid] (seaIcePresence) ice: 0 -->
+         <mox:seaIcePresence>0</mox:seaIcePresence>
+<!-- provider: wam [wam 4km grid] (meanWaveDirection) ice: 0 -->
+         <mox:meanTotalWaveDirection uom="deg">161.1</mox:meanTotalWaveDirection>
+<!-- provider: wam [wam 4km grid] (significantTotalWaveHeight) ice: 0 -->
+         <mox:significantTotalWaveHeight uom="m">1.4</mox:significantTotalWaveHeight>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaCurrentDirection/seaCurrentSpeed) -->
+         <mox:seaCurrentDirection uom="deg">232.7</mox:seaCurrentDirection>
+         <mox:seaCurrentSpeed uom="m/s">0.08</mox:seaCurrentSpeed>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaSurfaceHeight) -->
+         <mox:seaSurfaceHeight uom="m">-0.0</mox:seaSurfaceHeight>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaTemperature) -->
+         <mox:seaTemperature uom="Cel">7.5</mox:seaTemperature>
+      </metno:OceanForecast>
+   </mox:forecast>
+   <mox:forecast>
+      <metno:OceanForecast gml:id="f-1">
+         <mox:validTime>
+            <gml:TimePeriod gml:id="vt-1">
+               <gml:begin>2009-04-22T12:00:00Z</gml:begin>
+               <gml:end>2009-04-22T12:00:00Z</gml:end>
+            </gml:TimePeriod>
+         </mox:validTime>
+<!-- provider: wam [wam 4km grid] (seaIcePresence) ice: 0 -->
+         <mox:seaIcePresence>0</mox:seaIcePresence>
+<!-- provider: wam [wam 4km grid] (meanWaveDirection) ice: 0 -->
+         <mox:meanTotalWaveDirection uom="deg">161.7</mox:meanTotalWaveDirection>
+<!-- provider: wam [wam 4km grid] (significantTotalWaveHeight) ice: 0 -->
+         <mox:significantTotalWaveHeight uom="m">1.4</mox:significantTotalWaveHeight>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaCurrentDirection/seaCurrentSpeed) -->
+         <mox:seaCurrentDirection uom="deg">271.0</mox:seaCurrentDirection>
+         <mox:seaCurrentSpeed uom="m/s">0.08</mox:seaCurrentSpeed>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaSurfaceHeight) -->
+         <mox:seaSurfaceHeight uom="m">-0.1</mox:seaSurfaceHeight>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaTemperature) -->
+         <mox:seaTemperature uom="Cel">7.5</mox:seaTemperature>
+      </metno:OceanForecast>
+   </mox:forecast>
+   <mox:forecast>
+      <metno:OceanForecast gml:id="f-2">
+         <mox:validTime>
+            <gml:TimePeriod gml:id="vt-2">
+               <gml:begin>2009-04-22T13:00:00Z</gml:begin>
+               <gml:end>2009-04-22T13:00:00Z</gml:end>
+            </gml:TimePeriod>
+         </mox:validTime>
+<!-- provider: wam [wam 4km grid] (seaIcePresence) ice: 0 -->
+         <mox:seaIcePresence>0</mox:seaIcePresence>
+<!-- provider: wam [wam 4km grid] (meanWaveDirection) ice: 0 -->
+         <mox:meanTotalWaveDirection uom="deg">162.6</mox:meanTotalWaveDirection>
+<!-- provider: wam [wam 4km grid] (significantTotalWaveHeight) ice: 0 -->
+         <mox:significantTotalWaveHeight uom="m">1.4</mox:significantTotalWaveHeight>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaCurrentDirection/seaCurrentSpeed) -->
+         <mox:seaCurrentDirection uom="deg">304.5</mox:seaCurrentDirection>
+         <mox:seaCurrentSpeed uom="m/s">0.10</mox:seaCurrentSpeed>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaSurfaceHeight) -->
+         <mox:seaSurfaceHeight uom="m">-0.3</mox:seaSurfaceHeight>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaTemperature) -->
+         <mox:seaTemperature uom="Cel">7.5</mox:seaTemperature>
+      </metno:OceanForecast>
+   </mox:forecast>
+   <mox:forecast>
+      <metno:OceanForecast gml:id="f-3">
+         <mox:validTime>
+            <gml:TimePeriod gml:id="vt-3">
+               <gml:begin>2009-04-22T14:00:00Z</gml:begin>
+               <gml:end>2009-04-22T14:00:00Z</gml:end>
+            </gml:TimePeriod>
+         </mox:validTime>
+<!-- provider: wam [wam 4km grid] (seaIcePresence) ice: 0 -->
+         <mox:seaIcePresence>0</mox:seaIcePresence>
+<!-- provider: wam [wam 4km grid] (meanWaveDirection) ice: 0 -->
+         <mox:meanTotalWaveDirection uom="deg">163.9</mox:meanTotalWaveDirection>
+<!-- provider: wam [wam 4km grid] (significantTotalWaveHeight) ice: 0 -->
+         <mox:significantTotalWaveHeight uom="m">1.4</mox:significantTotalWaveHeight>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaCurrentDirection/seaCurrentSpeed) -->
+         <mox:seaCurrentDirection uom="deg">331.2</mox:seaCurrentDirection>
+         <mox:seaCurrentSpeed uom="m/s">0.12</mox:seaCurrentSpeed>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaSurfaceHeight) -->
+         <mox:seaSurfaceHeight uom="m">-0.3</mox:seaSurfaceHeight>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaTemperature) -->
+         <mox:seaTemperature uom="Cel">7.5</mox:seaTemperature>
+      </metno:OceanForecast>
+   </mox:forecast>
+   <mox:forecast>
+      <metno:OceanForecast gml:id="f-4">
+         <mox:validTime>
+            <gml:TimePeriod gml:id="vt-4">
+               <gml:begin>2009-04-22T15:00:00Z</gml:begin>
+               <gml:end>2009-04-22T15:00:00Z</gml:end>
+            </gml:TimePeriod>
+         </mox:validTime>
+<!-- provider: wam [wam 4km grid] (seaIcePresence) ice: 0 -->
+         <mox:seaIcePresence>0</mox:seaIcePresence>
+<!-- provider: wam [wam 4km grid] (meanWaveDirection) ice: 0 -->
+         <mox:meanTotalWaveDirection uom="deg">165.1</mox:meanTotalWaveDirection>
+<!-- provider: wam [wam 4km grid] (significantTotalWaveHeight) ice: 0 -->
+         <mox:significantTotalWaveHeight uom="m">1.4</mox:significantTotalWaveHeight>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaCurrentDirection/seaCurrentSpeed) -->
+         <mox:seaCurrentDirection uom="deg">353.2</mox:seaCurrentDirection>
+         <mox:seaCurrentSpeed uom="m/s">0.13</mox:seaCurrentSpeed>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaSurfaceHeight) -->
+         <mox:seaSurfaceHeight uom="m">-0.4</mox:seaSurfaceHeight>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaTemperature) -->
+         <mox:seaTemperature uom="Cel">7.5</mox:seaTemperature>
+      </metno:OceanForecast>
+   </mox:forecast>
+   <mox:forecast>
+      <metno:OceanForecast gml:id="f-5">
+         <mox:validTime>
+            <gml:TimePeriod gml:id="vt-5">
+               <gml:begin>2009-04-22T16:00:00Z</gml:begin>
+               <gml:end>2009-04-22T16:00:00Z</gml:end>
+            </gml:TimePeriod>
+         </mox:validTime>
+<!-- provider: wam [wam 4km grid] (seaIcePresence) ice: 0 -->
+         <mox:seaIcePresence>0</mox:seaIcePresence>
+<!-- provider: wam [wam 4km grid] (meanWaveDirection) ice: 0 -->
+         <mox:meanTotalWaveDirection uom="deg">166.1</mox:meanTotalWaveDirection>
+<!-- provider: wam [wam 4km grid] (significantTotalWaveHeight) ice: 0 -->
+         <mox:significantTotalWaveHeight uom="m">1.4</mox:significantTotalWaveHeight>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaCurrentDirection/seaCurrentSpeed) -->
+         <mox:seaCurrentDirection uom="deg">13.6</mox:seaCurrentDirection>
+         <mox:seaCurrentSpeed uom="m/s">0.14</mox:seaCurrentSpeed>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaSurfaceHeight) -->
+         <mox:seaSurfaceHeight uom="m">-0.3</mox:seaSurfaceHeight>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaTemperature) -->
+         <mox:seaTemperature uom="Cel">7.5</mox:seaTemperature>
+      </metno:OceanForecast>
+   </mox:forecast>
+   <mox:forecast>
+      <metno:OceanForecast gml:id="f-6">
+         <mox:validTime>
+            <gml:TimePeriod gml:id="vt-6">
+               <gml:begin>2009-04-22T17:00:00Z</gml:begin>
+               <gml:end>2009-04-22T17:00:00Z</gml:end>
+            </gml:TimePeriod>
+         </mox:validTime>
+<!-- provider: wam [wam 4km grid] (seaIcePresence) ice: 0 -->
+         <mox:seaIcePresence>0</mox:seaIcePresence>
+<!-- provider: wam [wam 4km grid] (meanWaveDirection) ice: 0 -->
+         <mox:meanTotalWaveDirection uom="deg">166.6</mox:meanTotalWaveDirection>
+<!-- provider: wam [wam 4km grid] (significantTotalWaveHeight) ice: 0 -->
+         <mox:significantTotalWaveHeight uom="m">1.4</mox:significantTotalWaveHeight>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaCurrentDirection/seaCurrentSpeed) -->
+         <mox:seaCurrentDirection uom="deg">35.2</mox:seaCurrentDirection>
+         <mox:seaCurrentSpeed uom="m/s">0.14</mox:seaCurrentSpeed>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaSurfaceHeight) -->
+         <mox:seaSurfaceHeight uom="m">-0.2</mox:seaSurfaceHeight>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaTemperature) -->
+         <mox:seaTemperature uom="Cel">7.5</mox:seaTemperature>
+      </metno:OceanForecast>
+   </mox:forecast>
+   <mox:forecast>
+      <metno:OceanForecast gml:id="f-7">
+         <mox:validTime>
+            <gml:TimePeriod gml:id="vt-7">
+               <gml:begin>2009-04-22T18:00:00Z</gml:begin>
+               <gml:end>2009-04-22T18:00:00Z</gml:end>
+            </gml:TimePeriod>
+         </mox:validTime>
+<!-- provider: wam [wam 4km grid] (seaIcePresence) ice: 0 -->
+         <mox:seaIcePresence>0</mox:seaIcePresence>
+<!-- provider: wam [wam 4km grid] (meanWaveDirection) ice: 0 -->
+         <mox:meanTotalWaveDirection uom="deg">166.7</mox:meanTotalWaveDirection>
+<!-- provider: wam [wam 4km grid] (significantTotalWaveHeight) ice: 0 -->
+         <mox:significantTotalWaveHeight uom="m">1.5</mox:significantTotalWaveHeight>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaCurrentDirection/seaCurrentSpeed) -->
+         <mox:seaCurrentDirection uom="deg">58.1</mox:seaCurrentDirection>
+         <mox:seaCurrentSpeed uom="m/s">0.13</mox:seaCurrentSpeed>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaSurfaceHeight) -->
+         <mox:seaSurfaceHeight uom="m">-0.0</mox:seaSurfaceHeight>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaTemperature) -->
+         <mox:seaTemperature uom="Cel">7.5</mox:seaTemperature>
+      </metno:OceanForecast>
+   </mox:forecast>
+   <mox:forecast>
+      <metno:OceanForecast gml:id="f-8">
+         <mox:validTime>
+            <gml:TimePeriod gml:id="vt-8">
+               <gml:begin>2009-04-22T19:00:00Z</gml:begin>
+               <gml:end>2009-04-22T19:00:00Z</gml:end>
+            </gml:TimePeriod>
+         </mox:validTime>
+<!-- provider: wam [wam 4km grid] (seaIcePresence) ice: 0 -->
+         <mox:seaIcePresence>0</mox:seaIcePresence>
+<!-- provider: wam [wam 4km grid] (meanWaveDirection) ice: 0 -->
+         <mox:meanTotalWaveDirection uom="deg">167.1</mox:meanTotalWaveDirection>
+<!-- provider: wam [wam 4km grid] (significantTotalWaveHeight) ice: 0 -->
+         <mox:significantTotalWaveHeight uom="m">1.5</mox:significantTotalWaveHeight>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaCurrentDirection/seaCurrentSpeed) -->
+         <mox:seaCurrentDirection uom="deg">80.4</mox:seaCurrentDirection>
+         <mox:seaCurrentSpeed uom="m/s">0.13</mox:seaCurrentSpeed>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaSurfaceHeight) -->
+         <mox:seaSurfaceHeight uom="m">0.1</mox:seaSurfaceHeight>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaTemperature) -->
+         <mox:seaTemperature uom="Cel">7.5</mox:seaTemperature>
+      </metno:OceanForecast>
+   </mox:forecast>
+   <mox:forecast>
+      <metno:OceanForecast gml:id="f-9">
+         <mox:validTime>
+            <gml:TimePeriod gml:id="vt-9">
+               <gml:begin>2009-04-22T20:00:00Z</gml:begin>
+               <gml:end>2009-04-22T20:00:00Z</gml:end>
+            </gml:TimePeriod>
+         </mox:validTime>
+<!-- provider: wam [wam 4km grid] (seaIcePresence) ice: 0 -->
+         <mox:seaIcePresence>0</mox:seaIcePresence>
+<!-- provider: wam [wam 4km grid] (meanWaveDirection) ice: 0 -->
+         <mox:meanTotalWaveDirection uom="deg">167.8</mox:meanTotalWaveDirection>
+<!-- provider: wam [wam 4km grid] (significantTotalWaveHeight) ice: 0 -->
+         <mox:significantTotalWaveHeight uom="m">1.5</mox:significantTotalWaveHeight>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaCurrentDirection/seaCurrentSpeed) -->
+         <mox:seaCurrentDirection uom="deg">101.1</mox:seaCurrentDirection>
+         <mox:seaCurrentSpeed uom="m/s">0.12</mox:seaCurrentSpeed>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaSurfaceHeight) -->
+         <mox:seaSurfaceHeight uom="m">0.2</mox:seaSurfaceHeight>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaTemperature) -->
+         <mox:seaTemperature uom="Cel">7.5</mox:seaTemperature>
+      </metno:OceanForecast>
+   </mox:forecast>
+   <mox:forecast>
+      <metno:OceanForecast gml:id="f-10">
+         <mox:validTime>
+            <gml:TimePeriod gml:id="vt-10">
+               <gml:begin>2009-04-22T21:00:00Z</gml:begin>
+               <gml:end>2009-04-22T21:00:00Z</gml:end>
+            </gml:TimePeriod>
+         </mox:validTime>
+<!-- provider: wam [wam 4km grid] (seaIcePresence) ice: 0 -->
+         <mox:seaIcePresence>0</mox:seaIcePresence>
+<!-- provider: wam [wam 4km grid] (meanWaveDirection) ice: 0 -->
+         <mox:meanTotalWaveDirection uom="deg">168.8</mox:meanTotalWaveDirection>
+<!-- provider: wam [wam 4km grid] (significantTotalWaveHeight) ice: 0 -->
+         <mox:significantTotalWaveHeight uom="m">1.6</mox:significantTotalWaveHeight>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaCurrentDirection/seaCurrentSpeed) -->
+         <mox:seaCurrentDirection uom="deg">120.3</mox:seaCurrentDirection>
+         <mox:seaCurrentSpeed uom="m/s">0.10</mox:seaCurrentSpeed>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaSurfaceHeight) -->
+         <mox:seaSurfaceHeight uom="m">0.3</mox:seaSurfaceHeight>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaTemperature) -->
+         <mox:seaTemperature uom="Cel">7.5</mox:seaTemperature>
+      </metno:OceanForecast>
+   </mox:forecast>
+   <mox:forecast>
+      <metno:OceanForecast gml:id="f-11">
+         <mox:validTime>
+            <gml:TimePeriod gml:id="vt-11">
+               <gml:begin>2009-04-22T22:00:00Z</gml:begin>
+               <gml:end>2009-04-22T22:00:00Z</gml:end>
+            </gml:TimePeriod>
+         </mox:validTime>
+<!-- provider: wam [wam 4km grid] (seaIcePresence) ice: 0 -->
+         <mox:seaIcePresence>0</mox:seaIcePresence>
+<!-- provider: wam [wam 4km grid] (meanWaveDirection) ice: 0 -->
+         <mox:meanTotalWaveDirection uom="deg">169.4</mox:meanTotalWaveDirection>
+<!-- provider: wam [wam 4km grid] (significantTotalWaveHeight) ice: 0 -->
+         <mox:significantTotalWaveHeight uom="m">1.6</mox:significantTotalWaveHeight>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaCurrentDirection/seaCurrentSpeed) -->
+         <mox:seaCurrentDirection uom="deg">139.0</mox:seaCurrentDirection>
+         <mox:seaCurrentSpeed uom="m/s">0.08</mox:seaCurrentSpeed>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaSurfaceHeight) -->
+         <mox:seaSurfaceHeight uom="m">0.3</mox:seaSurfaceHeight>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaTemperature) -->
+         <mox:seaTemperature uom="Cel">7.4</mox:seaTemperature>
+      </metno:OceanForecast>
+   </mox:forecast>
+   <mox:forecast>
+      <metno:OceanForecast gml:id="f-12">
+         <mox:validTime>
+            <gml:TimePeriod gml:id="vt-12">
+               <gml:begin>2009-04-22T23:00:00Z</gml:begin>
+               <gml:end>2009-04-22T23:00:00Z</gml:end>
+            </gml:TimePeriod>
+         </mox:validTime>
+<!-- provider: wam [wam 4km grid] (seaIcePresence) ice: 0 -->
+         <mox:seaIcePresence>0</mox:seaIcePresence>
+<!-- provider: wam [wam 4km grid] (meanWaveDirection) ice: 0 -->
+         <mox:meanTotalWaveDirection uom="deg">169.9</mox:meanTotalWaveDirection>
+<!-- provider: wam [wam 4km grid] (significantTotalWaveHeight) ice: 0 -->
+         <mox:significantTotalWaveHeight uom="m">1.6</mox:significantTotalWaveHeight>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaCurrentDirection/seaCurrentSpeed) -->
+         <mox:seaCurrentDirection uom="deg">166.0</mox:seaCurrentDirection>
+         <mox:seaCurrentSpeed uom="m/s">0.04</mox:seaCurrentSpeed>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaSurfaceHeight) -->
+         <mox:seaSurfaceHeight uom="m">0.2</mox:seaSurfaceHeight>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaTemperature) -->
+         <mox:seaTemperature uom="Cel">7.4</mox:seaTemperature>
+      </metno:OceanForecast>
+   </mox:forecast>
+   <mox:forecast>
+      <metno:OceanForecast gml:id="f-13">
+         <mox:validTime>
+            <gml:TimePeriod gml:id="vt-13">
+               <gml:begin>2009-04-23T00:00:00Z</gml:begin>
+               <gml:end>2009-04-23T00:00:00Z</gml:end>
+            </gml:TimePeriod>
+         </mox:validTime>
+<!-- provider: wam [wam 4km grid] (seaIcePresence) ice: 0 -->
+         <mox:seaIcePresence>0</mox:seaIcePresence>
+<!-- provider: wam [wam 4km grid] (meanWaveDirection) ice: 0 -->
+         <mox:meanTotalWaveDirection uom="deg">170.1</mox:meanTotalWaveDirection>
+<!-- provider: wam [wam 4km grid] (significantTotalWaveHeight) ice: 0 -->
+         <mox:significantTotalWaveHeight uom="m">1.5</mox:significantTotalWaveHeight>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaCurrentDirection/seaCurrentSpeed) -->
+         <mox:seaCurrentDirection uom="deg">281.0</mox:seaCurrentDirection>
+         <mox:seaCurrentSpeed uom="m/s">0.02</mox:seaCurrentSpeed>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaSurfaceHeight) -->
+         <mox:seaSurfaceHeight uom="m">0.1</mox:seaSurfaceHeight>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaTemperature) -->
+         <mox:seaTemperature uom="Cel">7.4</mox:seaTemperature>
+      </metno:OceanForecast>
+   </mox:forecast>
+   <mox:forecast>
+      <metno:OceanForecast gml:id="f-14">
+         <mox:validTime>
+            <gml:TimePeriod gml:id="vt-14">
+               <gml:begin>2009-04-23T01:00:00Z</gml:begin>
+               <gml:end>2009-04-23T01:00:00Z</gml:end>
+            </gml:TimePeriod>
+         </mox:validTime>
+<!-- provider: wam [wam 4km grid] (seaIcePresence) ice: 0 -->
+         <mox:seaIcePresence>0</mox:seaIcePresence>
+<!-- provider: wam [wam 4km grid] (meanWaveDirection) ice: 0 -->
+         <mox:meanTotalWaveDirection uom="deg">170.6</mox:meanTotalWaveDirection>
+<!-- provider: wam [wam 4km grid] (significantTotalWaveHeight) ice: 0 -->
+         <mox:significantTotalWaveHeight uom="m">1.5</mox:significantTotalWaveHeight>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaCurrentDirection/seaCurrentSpeed) -->
+         <mox:seaCurrentDirection uom="deg">332.6</mox:seaCurrentDirection>
+         <mox:seaCurrentSpeed uom="m/s">0.06</mox:seaCurrentSpeed>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaSurfaceHeight) -->
+         <mox:seaSurfaceHeight uom="m">-0.1</mox:seaSurfaceHeight>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaTemperature) -->
+         <mox:seaTemperature uom="Cel">7.5</mox:seaTemperature>
+      </metno:OceanForecast>
+   </mox:forecast>
+   <mox:forecast>
+      <metno:OceanForecast gml:id="f-15">
+         <mox:validTime>
+            <gml:TimePeriod gml:id="vt-15">
+               <gml:begin>2009-04-23T02:00:00Z</gml:begin>
+               <gml:end>2009-04-23T02:00:00Z</gml:end>
+            </gml:TimePeriod>
+         </mox:validTime>
+<!-- provider: wam [wam 4km grid] (seaIcePresence) ice: 0 -->
+         <mox:seaIcePresence>0</mox:seaIcePresence>
+<!-- provider: wam [wam 4km grid] (meanWaveDirection) ice: 0 -->
+         <mox:meanTotalWaveDirection uom="deg">170.6</mox:meanTotalWaveDirection>
+<!-- provider: wam [wam 4km grid] (significantTotalWaveHeight) ice: 0 -->
+         <mox:significantTotalWaveHeight uom="m">1.4</mox:significantTotalWaveHeight>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaCurrentDirection/seaCurrentSpeed) -->
+         <mox:seaCurrentDirection uom="deg">353.2</mox:seaCurrentDirection>
+         <mox:seaCurrentSpeed uom="m/s">0.11</mox:seaCurrentSpeed>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaSurfaceHeight) -->
+         <mox:seaSurfaceHeight uom="m">-0.2</mox:seaSurfaceHeight>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaTemperature) -->
+         <mox:seaTemperature uom="Cel">7.5</mox:seaTemperature>
+      </metno:OceanForecast>
+   </mox:forecast>
+   <mox:forecast>
+      <metno:OceanForecast gml:id="f-16">
+         <mox:validTime>
+            <gml:TimePeriod gml:id="vt-16">
+               <gml:begin>2009-04-23T03:00:00Z</gml:begin>
+               <gml:end>2009-04-23T03:00:00Z</gml:end>
+            </gml:TimePeriod>
+         </mox:validTime>
+<!-- provider: wam [wam 4km grid] (seaIcePresence) ice: 0 -->
+         <mox:seaIcePresence>0</mox:seaIcePresence>
+<!-- provider: wam [wam 4km grid] (meanWaveDirection) ice: 0 -->
+         <mox:meanTotalWaveDirection uom="deg">170.9</mox:meanTotalWaveDirection>
+<!-- provider: wam [wam 4km grid] (significantTotalWaveHeight) ice: 0 -->
+         <mox:significantTotalWaveHeight uom="m">1.4</mox:significantTotalWaveHeight>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaCurrentDirection/seaCurrentSpeed) -->
+         <mox:seaCurrentDirection uom="deg">10.3</mox:seaCurrentDirection>
+         <mox:seaCurrentSpeed uom="m/s">0.14</mox:seaCurrentSpeed>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaSurfaceHeight) -->
+         <mox:seaSurfaceHeight uom="m">-0.2</mox:seaSurfaceHeight>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaTemperature) -->
+         <mox:seaTemperature uom="Cel">7.5</mox:seaTemperature>
+      </metno:OceanForecast>
+   </mox:forecast>
+   <mox:forecast>
+      <metno:OceanForecast gml:id="f-17">
+         <mox:validTime>
+            <gml:TimePeriod gml:id="vt-17">
+               <gml:begin>2009-04-23T04:00:00Z</gml:begin>
+               <gml:end>2009-04-23T04:00:00Z</gml:end>
+            </gml:TimePeriod>
+         </mox:validTime>
+<!-- provider: wam [wam 4km grid] (seaIcePresence) ice: 0 -->
+         <mox:seaIcePresence>0</mox:seaIcePresence>
+<!-- provider: wam [wam 4km grid] (meanWaveDirection) ice: 0 -->
+         <mox:meanTotalWaveDirection uom="deg">172.5</mox:meanTotalWaveDirection>
+<!-- provider: wam [wam 4km grid] (significantTotalWaveHeight) ice: 0 -->
+         <mox:significantTotalWaveHeight uom="m">1.4</mox:significantTotalWaveHeight>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaCurrentDirection/seaCurrentSpeed) -->
+         <mox:seaCurrentDirection uom="deg">26.8</mox:seaCurrentDirection>
+         <mox:seaCurrentSpeed uom="m/s">0.17</mox:seaCurrentSpeed>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaSurfaceHeight) -->
+         <mox:seaSurfaceHeight uom="m">-0.2</mox:seaSurfaceHeight>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaTemperature) -->
+         <mox:seaTemperature uom="Cel">7.5</mox:seaTemperature>
+      </metno:OceanForecast>
+   </mox:forecast>
+   <mox:forecast>
+      <metno:OceanForecast gml:id="f-18">
+         <mox:validTime>
+            <gml:TimePeriod gml:id="vt-18">
+               <gml:begin>2009-04-23T05:00:00Z</gml:begin>
+               <gml:end>2009-04-23T05:00:00Z</gml:end>
+            </gml:TimePeriod>
+         </mox:validTime>
+<!-- provider: wam [wam 4km grid] (seaIcePresence) ice: 0 -->
+         <mox:seaIcePresence>0</mox:seaIcePresence>
+<!-- provider: wam [wam 4km grid] (meanWaveDirection) ice: 0 -->
+         <mox:meanTotalWaveDirection uom="deg">166.3</mox:meanTotalWaveDirection>
+<!-- provider: wam [wam 4km grid] (significantTotalWaveHeight) ice: 0 -->
+         <mox:significantTotalWaveHeight uom="m">1.4</mox:significantTotalWaveHeight>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaCurrentDirection/seaCurrentSpeed) -->
+         <mox:seaCurrentDirection uom="deg">44.3</mox:seaCurrentDirection>
+         <mox:seaCurrentSpeed uom="m/s">0.18</mox:seaCurrentSpeed>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaSurfaceHeight) -->
+         <mox:seaSurfaceHeight uom="m">-0.1</mox:seaSurfaceHeight>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaTemperature) -->
+         <mox:seaTemperature uom="Cel">7.5</mox:seaTemperature>
+      </metno:OceanForecast>
+   </mox:forecast>
+   <mox:forecast>
+      <metno:OceanForecast gml:id="f-19">
+         <mox:validTime>
+            <gml:TimePeriod gml:id="vt-19">
+               <gml:begin>2009-04-23T06:00:00Z</gml:begin>
+               <gml:end>2009-04-23T06:00:00Z</gml:end>
+            </gml:TimePeriod>
+         </mox:validTime>
+<!-- provider: wam [wam 4km grid] (seaIcePresence) ice: 0 -->
+         <mox:seaIcePresence>0</mox:seaIcePresence>
+<!-- provider: wam [wam 4km grid] (meanWaveDirection) ice: 0 -->
+         <mox:meanTotalWaveDirection uom="deg">159.9</mox:meanTotalWaveDirection>
+<!-- provider: wam [wam 4km grid] (significantTotalWaveHeight) ice: 0 -->
+         <mox:significantTotalWaveHeight uom="m">1.4</mox:significantTotalWaveHeight>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaCurrentDirection/seaCurrentSpeed) -->
+         <mox:seaCurrentDirection uom="deg">62.4</mox:seaCurrentDirection>
+         <mox:seaCurrentSpeed uom="m/s">0.19</mox:seaCurrentSpeed>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaSurfaceHeight) -->
+         <mox:seaSurfaceHeight uom="m">0.1</mox:seaSurfaceHeight>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaTemperature) -->
+         <mox:seaTemperature uom="Cel">7.5</mox:seaTemperature>
+      </metno:OceanForecast>
+   </mox:forecast>
+   <mox:forecast>
+      <metno:OceanForecast gml:id="f-20">
+         <mox:validTime>
+            <gml:TimePeriod gml:id="vt-20">
+               <gml:begin>2009-04-23T07:00:00Z</gml:begin>
+               <gml:end>2009-04-23T07:00:00Z</gml:end>
+            </gml:TimePeriod>
+         </mox:validTime>
+<!-- provider: wam [wam 4km grid] (seaIcePresence) ice: 0 -->
+         <mox:seaIcePresence>0</mox:seaIcePresence>
+<!-- provider: wam [wam 4km grid] (meanWaveDirection) ice: 0 -->
+         <mox:meanTotalWaveDirection uom="deg">159.9</mox:meanTotalWaveDirection>
+<!-- provider: wam [wam 4km grid] (significantTotalWaveHeight) ice: 0 -->
+         <mox:significantTotalWaveHeight uom="m">1.4</mox:significantTotalWaveHeight>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaCurrentDirection/seaCurrentSpeed) -->
+         <mox:seaCurrentDirection uom="deg">79.4</mox:seaCurrentDirection>
+         <mox:seaCurrentSpeed uom="m/s">0.20</mox:seaCurrentSpeed>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaSurfaceHeight) -->
+         <mox:seaSurfaceHeight uom="m">0.2</mox:seaSurfaceHeight>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaTemperature) -->
+         <mox:seaTemperature uom="Cel">7.5</mox:seaTemperature>
+      </metno:OceanForecast>
+   </mox:forecast>
+   <mox:forecast>
+      <metno:OceanForecast gml:id="f-21">
+         <mox:validTime>
+            <gml:TimePeriod gml:id="vt-21">
+               <gml:begin>2009-04-23T08:00:00Z</gml:begin>
+               <gml:end>2009-04-23T08:00:00Z</gml:end>
+            </gml:TimePeriod>
+         </mox:validTime>
+<!-- provider: wam [wam 4km grid] (seaIcePresence) ice: 0 -->
+         <mox:seaIcePresence>0</mox:seaIcePresence>
+<!-- provider: wam [wam 4km grid] (meanWaveDirection) ice: 0 -->
+         <mox:meanTotalWaveDirection uom="deg">159.2</mox:meanTotalWaveDirection>
+<!-- provider: wam [wam 4km grid] (significantTotalWaveHeight) ice: 0 -->
+         <mox:significantTotalWaveHeight uom="m">1.4</mox:significantTotalWaveHeight>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaCurrentDirection/seaCurrentSpeed) -->
+         <mox:seaCurrentDirection uom="deg">94.3</mox:seaCurrentDirection>
+         <mox:seaCurrentSpeed uom="m/s">0.19</mox:seaCurrentSpeed>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaSurfaceHeight) -->
+         <mox:seaSurfaceHeight uom="m">0.3</mox:seaSurfaceHeight>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaTemperature) -->
+         <mox:seaTemperature uom="Cel">7.5</mox:seaTemperature>
+      </metno:OceanForecast>
+   </mox:forecast>
+   <mox:forecast>
+      <metno:OceanForecast gml:id="f-22">
+         <mox:validTime>
+            <gml:TimePeriod gml:id="vt-22">
+               <gml:begin>2009-04-23T09:00:00Z</gml:begin>
+               <gml:end>2009-04-23T09:00:00Z</gml:end>
+            </gml:TimePeriod>
+         </mox:validTime>
+<!-- provider: wam [wam 4km grid] (seaIcePresence) ice: 0 -->
+         <mox:seaIcePresence>0</mox:seaIcePresence>
+<!-- provider: wam [wam 4km grid] (meanWaveDirection) ice: 0 -->
+         <mox:meanTotalWaveDirection uom="deg">157.6</mox:meanTotalWaveDirection>
+<!-- provider: wam [wam 4km grid] (significantTotalWaveHeight) ice: 0 -->
+         <mox:significantTotalWaveHeight uom="m">1.4</mox:significantTotalWaveHeight>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaCurrentDirection/seaCurrentSpeed) -->
+         <mox:seaCurrentDirection uom="deg">108.0</mox:seaCurrentDirection>
+         <mox:seaCurrentSpeed uom="m/s">0.18</mox:seaCurrentSpeed>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaSurfaceHeight) -->
+         <mox:seaSurfaceHeight uom="m">0.3</mox:seaSurfaceHeight>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaTemperature) -->
+         <mox:seaTemperature uom="Cel">7.5</mox:seaTemperature>
+      </metno:OceanForecast>
+   </mox:forecast>
+   <mox:forecast>
+      <metno:OceanForecast gml:id="f-23">
+         <mox:validTime>
+            <gml:TimePeriod gml:id="vt-23">
+               <gml:begin>2009-04-23T10:00:00Z</gml:begin>
+               <gml:end>2009-04-23T10:00:00Z</gml:end>
+            </gml:TimePeriod>
+         </mox:validTime>
+<!-- provider: wam [wam 4km grid] (seaIcePresence) ice: 0 -->
+         <mox:seaIcePresence>0</mox:seaIcePresence>
+<!-- provider: wam [wam 4km grid] (meanWaveDirection) ice: 0 -->
+         <mox:meanTotalWaveDirection uom="deg">160.7</mox:meanTotalWaveDirection>
+<!-- provider: wam [wam 4km grid] (significantTotalWaveHeight) ice: 0 -->
+         <mox:significantTotalWaveHeight uom="m">1.4</mox:significantTotalWaveHeight>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaCurrentDirection/seaCurrentSpeed) -->
+         <mox:seaCurrentDirection uom="deg">120.0</mox:seaCurrentDirection>
+         <mox:seaCurrentSpeed uom="m/s">0.15</mox:seaCurrentSpeed>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaSurfaceHeight) -->
+         <mox:seaSurfaceHeight uom="m">0.3</mox:seaSurfaceHeight>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaTemperature) -->
+         <mox:seaTemperature uom="Cel">7.5</mox:seaTemperature>
+      </metno:OceanForecast>
+   </mox:forecast>
+   <mox:forecast>
+      <metno:OceanForecast gml:id="f-24">
+         <mox:validTime>
+            <gml:TimePeriod gml:id="vt-24">
+               <gml:begin>2009-04-23T11:00:00Z</gml:begin>
+               <gml:end>2009-04-23T11:00:00Z</gml:end>
+            </gml:TimePeriod>
+         </mox:validTime>
+<!-- provider: wam [wam 4km grid] (seaIcePresence) ice: 0 -->
+         <mox:seaIcePresence>0</mox:seaIcePresence>
+<!-- provider: wam [wam 4km grid] (meanWaveDirection) ice: 0 -->
+         <mox:meanTotalWaveDirection uom="deg">156.4</mox:meanTotalWaveDirection>
+<!-- provider: wam [wam 4km grid] (significantTotalWaveHeight) ice: 0 -->
+         <mox:significantTotalWaveHeight uom="m">1.4</mox:significantTotalWaveHeight>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaCurrentDirection/seaCurrentSpeed) -->
+         <mox:seaCurrentDirection uom="deg">129.0</mox:seaCurrentDirection>
+         <mox:seaCurrentSpeed uom="m/s">0.10</mox:seaCurrentSpeed>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaSurfaceHeight) -->
+         <mox:seaSurfaceHeight uom="m">0.2</mox:seaSurfaceHeight>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaTemperature) -->
+         <mox:seaTemperature uom="Cel">7.5</mox:seaTemperature>
+      </metno:OceanForecast>
+   </mox:forecast>
+   <mox:forecast>
+      <metno:OceanForecast gml:id="f-25">
+         <mox:validTime>
+            <gml:TimePeriod gml:id="vt-25">
+               <gml:begin>2009-04-23T12:00:00Z</gml:begin>
+               <gml:end>2009-04-23T12:00:00Z</gml:end>
+            </gml:TimePeriod>
+         </mox:validTime>
+<!-- provider: wam [wam 4km grid] (seaIcePresence) ice: 0 -->
+         <mox:seaIcePresence>0</mox:seaIcePresence>
+<!-- provider: wam [wam 4km grid] (meanWaveDirection) ice: 0 -->
+         <mox:meanTotalWaveDirection uom="deg">154.4</mox:meanTotalWaveDirection>
+<!-- provider: wam [wam 4km grid] (significantTotalWaveHeight) ice: 0 -->
+         <mox:significantTotalWaveHeight uom="m">1.4</mox:significantTotalWaveHeight>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaCurrentDirection/seaCurrentSpeed) -->
+         <mox:seaCurrentDirection uom="deg">128.6</mox:seaCurrentDirection>
+         <mox:seaCurrentSpeed uom="m/s">0.05</mox:seaCurrentSpeed>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaSurfaceHeight) -->
+         <mox:seaSurfaceHeight uom="m">0.0</mox:seaSurfaceHeight>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaTemperature) -->
+         <mox:seaTemperature uom="Cel">7.5</mox:seaTemperature>
+      </metno:OceanForecast>
+   </mox:forecast>
+   <mox:forecast>
+      <metno:OceanForecast gml:id="f-26">
+         <mox:validTime>
+            <gml:TimePeriod gml:id="vt-26">
+               <gml:begin>2009-04-23T13:00:00Z</gml:begin>
+               <gml:end>2009-04-23T13:00:00Z</gml:end>
+            </gml:TimePeriod>
+         </mox:validTime>
+<!-- provider: wam [wam 4km grid] (seaIcePresence) ice: 0 -->
+         <mox:seaIcePresence>0</mox:seaIcePresence>
+<!-- provider: wam [wam 4km grid] (meanWaveDirection) ice: 0 -->
+         <mox:meanTotalWaveDirection uom="deg">144.4</mox:meanTotalWaveDirection>
+<!-- provider: wam [wam 4km grid] (significantTotalWaveHeight) ice: 0 -->
+         <mox:significantTotalWaveHeight uom="m">1.4</mox:significantTotalWaveHeight>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaCurrentDirection/seaCurrentSpeed) -->
+         <mox:seaCurrentDirection uom="deg">28.2</mox:seaCurrentDirection>
+         <mox:seaCurrentSpeed uom="m/s">0.02</mox:seaCurrentSpeed>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaSurfaceHeight) -->
+         <mox:seaSurfaceHeight uom="m">-0.1</mox:seaSurfaceHeight>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaTemperature) -->
+         <mox:seaTemperature uom="Cel">7.5</mox:seaTemperature>
+      </metno:OceanForecast>
+   </mox:forecast>
+   <mox:forecast>
+      <metno:OceanForecast gml:id="f-27">
+         <mox:validTime>
+            <gml:TimePeriod gml:id="vt-27">
+               <gml:begin>2009-04-23T14:00:00Z</gml:begin>
+               <gml:end>2009-04-23T14:00:00Z</gml:end>
+            </gml:TimePeriod>
+         </mox:validTime>
+<!-- provider: wam [wam 4km grid] (seaIcePresence) ice: 0 -->
+         <mox:seaIcePresence>0</mox:seaIcePresence>
+<!-- provider: wam [wam 4km grid] (meanWaveDirection) ice: 0 -->
+         <mox:meanTotalWaveDirection uom="deg">141.0</mox:meanTotalWaveDirection>
+<!-- provider: wam [wam 4km grid] (significantTotalWaveHeight) ice: 0 -->
+         <mox:significantTotalWaveHeight uom="m">1.4</mox:significantTotalWaveHeight>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaCurrentDirection/seaCurrentSpeed) -->
+         <mox:seaCurrentDirection uom="deg">7.4</mox:seaCurrentDirection>
+         <mox:seaCurrentSpeed uom="m/s">0.08</mox:seaCurrentSpeed>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaSurfaceHeight) -->
+         <mox:seaSurfaceHeight uom="m">-0.2</mox:seaSurfaceHeight>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaTemperature) -->
+         <mox:seaTemperature uom="Cel">7.5</mox:seaTemperature>
+      </metno:OceanForecast>
+   </mox:forecast>
+   <mox:forecast>
+      <metno:OceanForecast gml:id="f-28">
+         <mox:validTime>
+            <gml:TimePeriod gml:id="vt-28">
+               <gml:begin>2009-04-23T15:00:00Z</gml:begin>
+               <gml:end>2009-04-23T15:00:00Z</gml:end>
+            </gml:TimePeriod>
+         </mox:validTime>
+<!-- provider: wam [wam 4km grid] (seaIcePresence) ice: 0 -->
+         <mox:seaIcePresence>0</mox:seaIcePresence>
+<!-- provider: wam [wam 4km grid] (meanWaveDirection) ice: 0 -->
+         <mox:meanTotalWaveDirection uom="deg">137.7</mox:meanTotalWaveDirection>
+<!-- provider: wam [wam 4km grid] (significantTotalWaveHeight) ice: 0 -->
+         <mox:significantTotalWaveHeight uom="m">1.4</mox:significantTotalWaveHeight>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaCurrentDirection/seaCurrentSpeed) -->
+         <mox:seaCurrentDirection uom="deg">14.3</mox:seaCurrentDirection>
+         <mox:seaCurrentSpeed uom="m/s">0.13</mox:seaCurrentSpeed>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaSurfaceHeight) -->
+         <mox:seaSurfaceHeight uom="m">-0.3</mox:seaSurfaceHeight>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaTemperature) -->
+         <mox:seaTemperature uom="Cel">7.5</mox:seaTemperature>
+      </metno:OceanForecast>
+   </mox:forecast>
+   <mox:forecast>
+      <metno:OceanForecast gml:id="f-29">
+         <mox:validTime>
+            <gml:TimePeriod gml:id="vt-29">
+               <gml:begin>2009-04-23T16:00:00Z</gml:begin>
+               <gml:end>2009-04-23T16:00:00Z</gml:end>
+            </gml:TimePeriod>
+         </mox:validTime>
+<!-- provider: wam [wam 4km grid] (seaIcePresence) ice: 0 -->
+         <mox:seaIcePresence>0</mox:seaIcePresence>
+<!-- provider: wam [wam 4km grid] (meanWaveDirection) ice: 0 -->
+         <mox:meanTotalWaveDirection uom="deg">145.1</mox:meanTotalWaveDirection>
+<!-- provider: wam [wam 4km grid] (significantTotalWaveHeight) ice: 0 -->
+         <mox:significantTotalWaveHeight uom="m">1.5</mox:significantTotalWaveHeight>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaCurrentDirection/seaCurrentSpeed) -->
+         <mox:seaCurrentDirection uom="deg">25.7</mox:seaCurrentDirection>
+         <mox:seaCurrentSpeed uom="m/s">0.16</mox:seaCurrentSpeed>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaSurfaceHeight) -->
+         <mox:seaSurfaceHeight uom="m">-0.3</mox:seaSurfaceHeight>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaTemperature) -->
+         <mox:seaTemperature uom="Cel">7.5</mox:seaTemperature>
+      </metno:OceanForecast>
+   </mox:forecast>
+   <mox:forecast>
+      <metno:OceanForecast gml:id="f-30">
+         <mox:validTime>
+            <gml:TimePeriod gml:id="vt-30">
+               <gml:begin>2009-04-23T17:00:00Z</gml:begin>
+               <gml:end>2009-04-23T17:00:00Z</gml:end>
+            </gml:TimePeriod>
+         </mox:validTime>
+<!-- provider: wam [wam 4km grid] (seaIcePresence) ice: 0 -->
+         <mox:seaIcePresence>0</mox:seaIcePresence>
+<!-- provider: wam [wam 4km grid] (meanWaveDirection) ice: 0 -->
+         <mox:meanTotalWaveDirection uom="deg">142.4</mox:meanTotalWaveDirection>
+<!-- provider: wam [wam 4km grid] (significantTotalWaveHeight) ice: 0 -->
+         <mox:significantTotalWaveHeight uom="m">1.5</mox:significantTotalWaveHeight>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaCurrentDirection/seaCurrentSpeed) -->
+         <mox:seaCurrentDirection uom="deg">40.0</mox:seaCurrentDirection>
+         <mox:seaCurrentSpeed uom="m/s">0.18</mox:seaCurrentSpeed>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaSurfaceHeight) -->
+         <mox:seaSurfaceHeight uom="m">-0.2</mox:seaSurfaceHeight>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaTemperature) -->
+         <mox:seaTemperature uom="Cel">7.5</mox:seaTemperature>
+      </metno:OceanForecast>
+   </mox:forecast>
+   <mox:forecast>
+      <metno:OceanForecast gml:id="f-31">
+         <mox:validTime>
+            <gml:TimePeriod gml:id="vt-31">
+               <gml:begin>2009-04-23T18:00:00Z</gml:begin>
+               <gml:end>2009-04-23T18:00:00Z</gml:end>
+            </gml:TimePeriod>
+         </mox:validTime>
+<!-- provider: wam [wam 4km grid] (seaIcePresence) ice: 0 -->
+         <mox:seaIcePresence>0</mox:seaIcePresence>
+<!-- provider: wam [wam 4km grid] (meanWaveDirection) ice: 0 -->
+         <mox:meanTotalWaveDirection uom="deg">141.0</mox:meanTotalWaveDirection>
+<!-- provider: wam [wam 4km grid] (significantTotalWaveHeight) ice: 0 -->
+         <mox:significantTotalWaveHeight uom="m">1.6</mox:significantTotalWaveHeight>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaCurrentDirection/seaCurrentSpeed) -->
+         <mox:seaCurrentDirection uom="deg">56.6</mox:seaCurrentDirection>
+         <mox:seaCurrentSpeed uom="m/s">0.19</mox:seaCurrentSpeed>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaSurfaceHeight) -->
+         <mox:seaSurfaceHeight uom="m">-0.1</mox:seaSurfaceHeight>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaTemperature) -->
+         <mox:seaTemperature uom="Cel">7.5</mox:seaTemperature>
+      </metno:OceanForecast>
+   </mox:forecast>
+   <mox:forecast>
+      <metno:OceanForecast gml:id="f-32">
+         <mox:validTime>
+            <gml:TimePeriod gml:id="vt-32">
+               <gml:begin>2009-04-23T19:00:00Z</gml:begin>
+               <gml:end>2009-04-23T19:00:00Z</gml:end>
+            </gml:TimePeriod>
+         </mox:validTime>
+<!-- provider: wam [wam 4km grid] (seaIcePresence) ice: 0 -->
+         <mox:seaIcePresence>0</mox:seaIcePresence>
+<!-- provider: wam [wam 4km grid] (meanWaveDirection) ice: 0 -->
+         <mox:meanTotalWaveDirection uom="deg">139.5</mox:meanTotalWaveDirection>
+<!-- provider: wam [wam 4km grid] (significantTotalWaveHeight) ice: 0 -->
+         <mox:significantTotalWaveHeight uom="m">1.6</mox:significantTotalWaveHeight>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaCurrentDirection/seaCurrentSpeed) -->
+         <mox:seaCurrentDirection uom="deg">73.5</mox:seaCurrentDirection>
+         <mox:seaCurrentSpeed uom="m/s">0.20</mox:seaCurrentSpeed>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaSurfaceHeight) -->
+         <mox:seaSurfaceHeight uom="m">0.1</mox:seaSurfaceHeight>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaTemperature) -->
+         <mox:seaTemperature uom="Cel">7.5</mox:seaTemperature>
+      </metno:OceanForecast>
+   </mox:forecast>
+   <mox:forecast>
+      <metno:OceanForecast gml:id="f-33">
+         <mox:validTime>
+            <gml:TimePeriod gml:id="vt-33">
+               <gml:begin>2009-04-23T20:00:00Z</gml:begin>
+               <gml:end>2009-04-23T20:00:00Z</gml:end>
+            </gml:TimePeriod>
+         </mox:validTime>
+<!-- provider: wam [wam 4km grid] (seaIcePresence) ice: 0 -->
+         <mox:seaIcePresence>0</mox:seaIcePresence>
+<!-- provider: wam [wam 4km grid] (meanWaveDirection) ice: 0 -->
+         <mox:meanTotalWaveDirection uom="deg">126.3</mox:meanTotalWaveDirection>
+<!-- provider: wam [wam 4km grid] (significantTotalWaveHeight) ice: 0 -->
+         <mox:significantTotalWaveHeight uom="m">1.6</mox:significantTotalWaveHeight>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaCurrentDirection/seaCurrentSpeed) -->
+         <mox:seaCurrentDirection uom="deg">89.5</mox:seaCurrentDirection>
+         <mox:seaCurrentSpeed uom="m/s">0.20</mox:seaCurrentSpeed>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaSurfaceHeight) -->
+         <mox:seaSurfaceHeight uom="m">0.2</mox:seaSurfaceHeight>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaTemperature) -->
+         <mox:seaTemperature uom="Cel">7.5</mox:seaTemperature>
+      </metno:OceanForecast>
+   </mox:forecast>
+   <mox:forecast>
+      <metno:OceanForecast gml:id="f-34">
+         <mox:validTime>
+            <gml:TimePeriod gml:id="vt-34">
+               <gml:begin>2009-04-23T21:00:00Z</gml:begin>
+               <gml:end>2009-04-23T21:00:00Z</gml:end>
+            </gml:TimePeriod>
+         </mox:validTime>
+<!-- provider: wam [wam 4km grid] (seaIcePresence) ice: 0 -->
+         <mox:seaIcePresence>0</mox:seaIcePresence>
+<!-- provider: wam [wam 4km grid] (meanWaveDirection) ice: 0 -->
+         <mox:meanTotalWaveDirection uom="deg">124.4</mox:meanTotalWaveDirection>
+<!-- provider: wam [wam 4km grid] (significantTotalWaveHeight) ice: 0 -->
+         <mox:significantTotalWaveHeight uom="m">1.6</mox:significantTotalWaveHeight>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaCurrentDirection/seaCurrentSpeed) -->
+         <mox:seaCurrentDirection uom="deg">105.0</mox:seaCurrentDirection>
+         <mox:seaCurrentSpeed uom="m/s">0.19</mox:seaCurrentSpeed>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaSurfaceHeight) -->
+         <mox:seaSurfaceHeight uom="m">0.3</mox:seaSurfaceHeight>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaTemperature) -->
+         <mox:seaTemperature uom="Cel">7.5</mox:seaTemperature>
+      </metno:OceanForecast>
+   </mox:forecast>
+   <mox:forecast>
+      <metno:OceanForecast gml:id="f-35">
+         <mox:validTime>
+            <gml:TimePeriod gml:id="vt-35">
+               <gml:begin>2009-04-23T22:00:00Z</gml:begin>
+               <gml:end>2009-04-23T22:00:00Z</gml:end>
+            </gml:TimePeriod>
+         </mox:validTime>
+<!-- provider: wam [wam 4km grid] (seaIcePresence) ice: 0 -->
+         <mox:seaIcePresence>0</mox:seaIcePresence>
+<!-- provider: wam [wam 4km grid] (meanWaveDirection) ice: 0 -->
+         <mox:meanTotalWaveDirection uom="deg">124.0</mox:meanTotalWaveDirection>
+<!-- provider: wam [wam 4km grid] (significantTotalWaveHeight) ice: 0 -->
+         <mox:significantTotalWaveHeight uom="m">1.6</mox:significantTotalWaveHeight>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaCurrentDirection/seaCurrentSpeed) -->
+         <mox:seaCurrentDirection uom="deg">119.7</mox:seaCurrentDirection>
+         <mox:seaCurrentSpeed uom="m/s">0.16</mox:seaCurrentSpeed>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaSurfaceHeight) -->
+         <mox:seaSurfaceHeight uom="m">0.4</mox:seaSurfaceHeight>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaTemperature) -->
+         <mox:seaTemperature uom="Cel">7.5</mox:seaTemperature>
+      </metno:OceanForecast>
+   </mox:forecast>
+   <mox:forecast>
+      <metno:OceanForecast gml:id="f-36">
+         <mox:validTime>
+            <gml:TimePeriod gml:id="vt-36">
+               <gml:begin>2009-04-23T23:00:00Z</gml:begin>
+               <gml:end>2009-04-23T23:00:00Z</gml:end>
+            </gml:TimePeriod>
+         </mox:validTime>
+<!-- provider: wam [wam 4km grid] (seaIcePresence) ice: 0 -->
+         <mox:seaIcePresence>0</mox:seaIcePresence>
+<!-- provider: wam [wam 4km grid] (meanWaveDirection) ice: 0 -->
+         <mox:meanTotalWaveDirection uom="deg">119.4</mox:meanTotalWaveDirection>
+<!-- provider: wam [wam 4km grid] (significantTotalWaveHeight) ice: 0 -->
+         <mox:significantTotalWaveHeight uom="m">1.6</mox:significantTotalWaveHeight>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaCurrentDirection/seaCurrentSpeed) -->
+         <mox:seaCurrentDirection uom="deg">134.0</mox:seaCurrentDirection>
+         <mox:seaCurrentSpeed uom="m/s">0.12</mox:seaCurrentSpeed>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaSurfaceHeight) -->
+         <mox:seaSurfaceHeight uom="m">0.3</mox:seaSurfaceHeight>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaTemperature) -->
+         <mox:seaTemperature uom="Cel">7.5</mox:seaTemperature>
+      </metno:OceanForecast>
+   </mox:forecast>
+   <mox:forecast>
+      <metno:OceanForecast gml:id="f-37">
+         <mox:validTime>
+            <gml:TimePeriod gml:id="vt-37">
+               <gml:begin>2009-04-24T00:00:00Z</gml:begin>
+               <gml:end>2009-04-24T00:00:00Z</gml:end>
+            </gml:TimePeriod>
+         </mox:validTime>
+<!-- provider: wam [wam 4km grid] (seaIcePresence) ice: 0 -->
+         <mox:seaIcePresence>0</mox:seaIcePresence>
+<!-- provider: wam [wam 4km grid] (meanWaveDirection) ice: 0 -->
+         <mox:meanTotalWaveDirection uom="deg">116.3</mox:meanTotalWaveDirection>
+<!-- provider: wam [wam 4km grid] (significantTotalWaveHeight) ice: 0 -->
+         <mox:significantTotalWaveHeight uom="m">1.5</mox:significantTotalWaveHeight>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaCurrentDirection/seaCurrentSpeed) -->
+         <mox:seaCurrentDirection uom="deg">148.8</mox:seaCurrentDirection>
+         <mox:seaCurrentSpeed uom="m/s">0.07</mox:seaCurrentSpeed>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaSurfaceHeight) -->
+         <mox:seaSurfaceHeight uom="m">0.2</mox:seaSurfaceHeight>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaTemperature) -->
+         <mox:seaTemperature uom="Cel">7.5</mox:seaTemperature>
+      </metno:OceanForecast>
+   </mox:forecast>
+   <mox:forecast>
+      <metno:OceanForecast gml:id="f-38">
+         <mox:validTime>
+            <gml:TimePeriod gml:id="vt-38">
+               <gml:begin>2009-04-24T01:00:00Z</gml:begin>
+               <gml:end>2009-04-24T01:00:00Z</gml:end>
+            </gml:TimePeriod>
+         </mox:validTime>
+<!-- provider: wam [wam 4km grid] (seaIcePresence) ice: 0 -->
+         <mox:seaIcePresence>0</mox:seaIcePresence>
+<!-- provider: wam [wam 4km grid] (meanWaveDirection) ice: 0 -->
+         <mox:meanTotalWaveDirection uom="deg">121.4</mox:meanTotalWaveDirection>
+<!-- provider: wam [wam 4km grid] (significantTotalWaveHeight) ice: 0 -->
+         <mox:significantTotalWaveHeight uom="m">1.5</mox:significantTotalWaveHeight>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaCurrentDirection/seaCurrentSpeed) -->
+         <mox:seaCurrentDirection uom="deg">176.7</mox:seaCurrentDirection>
+         <mox:seaCurrentSpeed uom="m/s">0.01</mox:seaCurrentSpeed>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaSurfaceHeight) -->
+         <mox:seaSurfaceHeight uom="m">0.0</mox:seaSurfaceHeight>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaTemperature) -->
+         <mox:seaTemperature uom="Cel">7.5</mox:seaTemperature>
+      </metno:OceanForecast>
+   </mox:forecast>
+   <mox:forecast>
+      <metno:OceanForecast gml:id="f-39">
+         <mox:validTime>
+            <gml:TimePeriod gml:id="vt-39">
+               <gml:begin>2009-04-24T02:00:00Z</gml:begin>
+               <gml:end>2009-04-24T02:00:00Z</gml:end>
+            </gml:TimePeriod>
+         </mox:validTime>
+<!-- provider: wam [wam 4km grid] (seaIcePresence) ice: 0 -->
+         <mox:seaIcePresence>0</mox:seaIcePresence>
+<!-- provider: wam [wam 4km grid] (meanWaveDirection) ice: 0 -->
+         <mox:meanTotalWaveDirection uom="deg">118.4</mox:meanTotalWaveDirection>
+<!-- provider: wam [wam 4km grid] (significantTotalWaveHeight) ice: 0 -->
+         <mox:significantTotalWaveHeight uom="m">1.5</mox:significantTotalWaveHeight>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaCurrentDirection/seaCurrentSpeed) -->
+         <mox:seaCurrentDirection uom="deg">346.0</mox:seaCurrentDirection>
+         <mox:seaCurrentSpeed uom="m/s">0.05</mox:seaCurrentSpeed>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaSurfaceHeight) -->
+         <mox:seaSurfaceHeight uom="m">-0.1</mox:seaSurfaceHeight>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaTemperature) -->
+         <mox:seaTemperature uom="Cel">7.5</mox:seaTemperature>
+      </metno:OceanForecast>
+   </mox:forecast>
+   <mox:forecast>
+      <metno:OceanForecast gml:id="f-40">
+         <mox:validTime>
+            <gml:TimePeriod gml:id="vt-40">
+               <gml:begin>2009-04-24T03:00:00Z</gml:begin>
+               <gml:end>2009-04-24T03:00:00Z</gml:end>
+            </gml:TimePeriod>
+         </mox:validTime>
+<!-- provider: wam [wam 4km grid] (seaIcePresence) ice: 0 -->
+         <mox:seaIcePresence>0</mox:seaIcePresence>
+<!-- provider: wam [wam 4km grid] (meanWaveDirection) ice: 0 -->
+         <mox:meanTotalWaveDirection uom="deg">119.9</mox:meanTotalWaveDirection>
+<!-- provider: wam [wam 4km grid] (significantTotalWaveHeight) ice: 0 -->
+         <mox:significantTotalWaveHeight uom="m">1.5</mox:significantTotalWaveHeight>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaCurrentDirection/seaCurrentSpeed) -->
+         <mox:seaCurrentDirection uom="deg">2.6</mox:seaCurrentDirection>
+         <mox:seaCurrentSpeed uom="m/s">0.10</mox:seaCurrentSpeed>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaSurfaceHeight) -->
+         <mox:seaSurfaceHeight uom="m">-0.2</mox:seaSurfaceHeight>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaTemperature) -->
+         <mox:seaTemperature uom="Cel">7.5</mox:seaTemperature>
+      </metno:OceanForecast>
+   </mox:forecast>
+   <mox:forecast>
+      <metno:OceanForecast gml:id="f-41">
+         <mox:validTime>
+            <gml:TimePeriod gml:id="vt-41">
+               <gml:begin>2009-04-24T04:00:00Z</gml:begin>
+               <gml:end>2009-04-24T04:00:00Z</gml:end>
+            </gml:TimePeriod>
+         </mox:validTime>
+<!-- provider: wam [wam 4km grid] (seaIcePresence) ice: 0 -->
+         <mox:seaIcePresence>0</mox:seaIcePresence>
+<!-- provider: wam [wam 4km grid] (meanWaveDirection) ice: 0 -->
+         <mox:meanTotalWaveDirection uom="deg">121.2</mox:meanTotalWaveDirection>
+<!-- provider: wam [wam 4km grid] (significantTotalWaveHeight) ice: 0 -->
+         <mox:significantTotalWaveHeight uom="m">1.5</mox:significantTotalWaveHeight>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaCurrentDirection/seaCurrentSpeed) -->
+         <mox:seaCurrentDirection uom="deg">17.2</mox:seaCurrentDirection>
+         <mox:seaCurrentSpeed uom="m/s">0.15</mox:seaCurrentSpeed>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaSurfaceHeight) -->
+         <mox:seaSurfaceHeight uom="m">-0.2</mox:seaSurfaceHeight>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaTemperature) -->
+         <mox:seaTemperature uom="Cel">7.5</mox:seaTemperature>
+      </metno:OceanForecast>
+   </mox:forecast>
+   <mox:forecast>
+      <metno:OceanForecast gml:id="f-42">
+         <mox:validTime>
+            <gml:TimePeriod gml:id="vt-42">
+               <gml:begin>2009-04-24T05:00:00Z</gml:begin>
+               <gml:end>2009-04-24T05:00:00Z</gml:end>
+            </gml:TimePeriod>
+         </mox:validTime>
+<!-- provider: wam [wam 4km grid] (seaIcePresence) ice: 0 -->
+         <mox:seaIcePresence>0</mox:seaIcePresence>
+<!-- provider: wam [wam 4km grid] (meanWaveDirection) ice: 0 -->
+         <mox:meanTotalWaveDirection uom="deg">121.1</mox:meanTotalWaveDirection>
+<!-- provider: wam [wam 4km grid] (significantTotalWaveHeight) ice: 0 -->
+         <mox:significantTotalWaveHeight uom="m">1.5</mox:significantTotalWaveHeight>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaCurrentDirection/seaCurrentSpeed) -->
+         <mox:seaCurrentDirection uom="deg">32.3</mox:seaCurrentDirection>
+         <mox:seaCurrentSpeed uom="m/s">0.18</mox:seaCurrentSpeed>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaSurfaceHeight) -->
+         <mox:seaSurfaceHeight uom="m">-0.2</mox:seaSurfaceHeight>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaTemperature) -->
+         <mox:seaTemperature uom="Cel">7.5</mox:seaTemperature>
+      </metno:OceanForecast>
+   </mox:forecast>
+   <mox:forecast>
+      <metno:OceanForecast gml:id="f-43">
+         <mox:validTime>
+            <gml:TimePeriod gml:id="vt-43">
+               <gml:begin>2009-04-24T06:00:00Z</gml:begin>
+               <gml:end>2009-04-24T06:00:00Z</gml:end>
+            </gml:TimePeriod>
+         </mox:validTime>
+<!-- provider: wam [wam 4km grid] (seaIcePresence) ice: 0 -->
+         <mox:seaIcePresence>0</mox:seaIcePresence>
+<!-- provider: wam [wam 4km grid] (meanWaveDirection) ice: 0 -->
+         <mox:meanTotalWaveDirection uom="deg">119.8</mox:meanTotalWaveDirection>
+<!-- provider: wam [wam 4km grid] (significantTotalWaveHeight) ice: 0 -->
+         <mox:significantTotalWaveHeight uom="m">1.5</mox:significantTotalWaveHeight>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaCurrentDirection/seaCurrentSpeed) -->
+         <mox:seaCurrentDirection uom="deg">48.7</mox:seaCurrentDirection>
+         <mox:seaCurrentSpeed uom="m/s">0.20</mox:seaCurrentSpeed>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaSurfaceHeight) -->
+         <mox:seaSurfaceHeight uom="m">-0.0</mox:seaSurfaceHeight>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaTemperature) -->
+         <mox:seaTemperature uom="Cel">7.5</mox:seaTemperature>
+      </metno:OceanForecast>
+   </mox:forecast>
+   <mox:forecast>
+      <metno:OceanForecast gml:id="f-44">
+         <mox:validTime>
+            <gml:TimePeriod gml:id="vt-44">
+               <gml:begin>2009-04-24T07:00:00Z</gml:begin>
+               <gml:end>2009-04-24T07:00:00Z</gml:end>
+            </gml:TimePeriod>
+         </mox:validTime>
+<!-- provider: wam [wam 4km grid] (seaIcePresence) ice: 0 -->
+         <mox:seaIcePresence>0</mox:seaIcePresence>
+<!-- provider: wam [wam 4km grid] (meanWaveDirection) ice: 0 -->
+         <mox:meanTotalWaveDirection uom="deg">120.1</mox:meanTotalWaveDirection>
+<!-- provider: wam [wam 4km grid] (significantTotalWaveHeight) ice: 0 -->
+         <mox:significantTotalWaveHeight uom="m">1.5</mox:significantTotalWaveHeight>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaCurrentDirection/seaCurrentSpeed) -->
+         <mox:seaCurrentDirection uom="deg">65.6</mox:seaCurrentDirection>
+         <mox:seaCurrentSpeed uom="m/s">0.21</mox:seaCurrentSpeed>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaSurfaceHeight) -->
+         <mox:seaSurfaceHeight uom="m">0.1</mox:seaSurfaceHeight>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaTemperature) -->
+         <mox:seaTemperature uom="Cel">7.5</mox:seaTemperature>
+      </metno:OceanForecast>
+   </mox:forecast>
+   <mox:forecast>
+      <metno:OceanForecast gml:id="f-45">
+         <mox:validTime>
+            <gml:TimePeriod gml:id="vt-45">
+               <gml:begin>2009-04-24T08:00:00Z</gml:begin>
+               <gml:end>2009-04-24T08:00:00Z</gml:end>
+            </gml:TimePeriod>
+         </mox:validTime>
+<!-- provider: wam [wam 4km grid] (seaIcePresence) ice: 0 -->
+         <mox:seaIcePresence>0</mox:seaIcePresence>
+<!-- provider: wam [wam 4km grid] (meanWaveDirection) ice: 0 -->
+         <mox:meanTotalWaveDirection uom="deg">121.5</mox:meanTotalWaveDirection>
+<!-- provider: wam [wam 4km grid] (significantTotalWaveHeight) ice: 0 -->
+         <mox:significantTotalWaveHeight uom="m">1.6</mox:significantTotalWaveHeight>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaCurrentDirection/seaCurrentSpeed) -->
+         <mox:seaCurrentDirection uom="deg">81.1</mox:seaCurrentDirection>
+         <mox:seaCurrentSpeed uom="m/s">0.22</mox:seaCurrentSpeed>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaSurfaceHeight) -->
+         <mox:seaSurfaceHeight uom="m">0.2</mox:seaSurfaceHeight>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaTemperature) -->
+         <mox:seaTemperature uom="Cel">7.5</mox:seaTemperature>
+      </metno:OceanForecast>
+   </mox:forecast>
+   <mox:forecast>
+      <metno:OceanForecast gml:id="f-46">
+         <mox:validTime>
+            <gml:TimePeriod gml:id="vt-46">
+               <gml:begin>2009-04-24T09:00:00Z</gml:begin>
+               <gml:end>2009-04-24T09:00:00Z</gml:end>
+            </gml:TimePeriod>
+         </mox:validTime>
+<!-- provider: wam [wam 4km grid] (seaIcePresence) ice: 0 -->
+         <mox:seaIcePresence>0</mox:seaIcePresence>
+<!-- provider: wam [wam 4km grid] (meanWaveDirection) ice: 0 -->
+         <mox:meanTotalWaveDirection uom="deg">123.8</mox:meanTotalWaveDirection>
+<!-- provider: wam [wam 4km grid] (significantTotalWaveHeight) ice: 0 -->
+         <mox:significantTotalWaveHeight uom="m">1.6</mox:significantTotalWaveHeight>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaCurrentDirection/seaCurrentSpeed) -->
+         <mox:seaCurrentDirection uom="deg">95.1</mox:seaCurrentDirection>
+         <mox:seaCurrentSpeed uom="m/s">0.21</mox:seaCurrentSpeed>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaSurfaceHeight) -->
+         <mox:seaSurfaceHeight uom="m">0.3</mox:seaSurfaceHeight>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaTemperature) -->
+         <mox:seaTemperature uom="Cel">7.5</mox:seaTemperature>
+      </metno:OceanForecast>
+   </mox:forecast>
+   <mox:forecast>
+      <metno:OceanForecast gml:id="f-47">
+         <mox:validTime>
+            <gml:TimePeriod gml:id="vt-47">
+               <gml:begin>2009-04-24T10:00:00Z</gml:begin>
+               <gml:end>2009-04-24T10:00:00Z</gml:end>
+            </gml:TimePeriod>
+         </mox:validTime>
+<!-- provider: wam [wam 4km grid] (seaIcePresence) ice: 0 -->
+         <mox:seaIcePresence>0</mox:seaIcePresence>
+<!-- provider: wam [wam 4km grid] (meanWaveDirection) ice: 0 -->
+         <mox:meanTotalWaveDirection uom="deg">126.4</mox:meanTotalWaveDirection>
+<!-- provider: wam [wam 4km grid] (significantTotalWaveHeight) ice: 0 -->
+         <mox:significantTotalWaveHeight uom="m">1.6</mox:significantTotalWaveHeight>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaCurrentDirection/seaCurrentSpeed) -->
+         <mox:seaCurrentDirection uom="deg">107.8</mox:seaCurrentDirection>
+         <mox:seaCurrentSpeed uom="m/s">0.19</mox:seaCurrentSpeed>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaSurfaceHeight) -->
+         <mox:seaSurfaceHeight uom="m">0.4</mox:seaSurfaceHeight>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaTemperature) -->
+         <mox:seaTemperature uom="Cel">7.5</mox:seaTemperature>
+      </metno:OceanForecast>
+   </mox:forecast>
+   <mox:forecast>
+      <metno:OceanForecast gml:id="f-48">
+         <mox:validTime>
+            <gml:TimePeriod gml:id="vt-48">
+               <gml:begin>2009-04-24T11:00:00Z</gml:begin>
+               <gml:end>2009-04-24T11:00:00Z</gml:end>
+            </gml:TimePeriod>
+         </mox:validTime>
+<!-- provider: wam [wam 4km grid] (seaIcePresence) ice: 0 -->
+         <mox:seaIcePresence>0</mox:seaIcePresence>
+<!-- provider: wam [wam 4km grid] (meanWaveDirection) ice: 0 -->
+         <mox:meanTotalWaveDirection uom="deg">123.2</mox:meanTotalWaveDirection>
+<!-- provider: wam [wam 4km grid] (significantTotalWaveHeight) ice: 0 -->
+         <mox:significantTotalWaveHeight uom="m">1.6</mox:significantTotalWaveHeight>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaCurrentDirection/seaCurrentSpeed) -->
+         <mox:seaCurrentDirection uom="deg">118.8</mox:seaCurrentDirection>
+         <mox:seaCurrentSpeed uom="m/s">0.15</mox:seaCurrentSpeed>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaSurfaceHeight) -->
+         <mox:seaSurfaceHeight uom="m">0.3</mox:seaSurfaceHeight>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaTemperature) -->
+         <mox:seaTemperature uom="Cel">7.5</mox:seaTemperature>
+      </metno:OceanForecast>
+   </mox:forecast>
+   <mox:forecast>
+      <metno:OceanForecast gml:id="f-49">
+         <mox:validTime>
+            <gml:TimePeriod gml:id="vt-49">
+               <gml:begin>2009-04-24T12:00:00Z</gml:begin>
+               <gml:end>2009-04-24T12:00:00Z</gml:end>
+            </gml:TimePeriod>
+         </mox:validTime>
+<!-- provider: wam [wam 4km grid] (seaIcePresence) ice: 0 -->
+         <mox:seaIcePresence>0</mox:seaIcePresence>
+<!-- provider: wam [wam 4km grid] (meanWaveDirection) ice: 0 -->
+         <mox:meanTotalWaveDirection uom="deg">124.5</mox:meanTotalWaveDirection>
+<!-- provider: wam [wam 4km grid] (significantTotalWaveHeight) ice: 0 -->
+         <mox:significantTotalWaveHeight uom="m">1.7</mox:significantTotalWaveHeight>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaCurrentDirection/seaCurrentSpeed) -->
+         <mox:seaCurrentDirection uom="deg">125.8</mox:seaCurrentDirection>
+         <mox:seaCurrentSpeed uom="m/s">0.10</mox:seaCurrentSpeed>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaSurfaceHeight) -->
+         <mox:seaSurfaceHeight uom="m">0.2</mox:seaSurfaceHeight>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaTemperature) -->
+         <mox:seaTemperature uom="Cel">7.5</mox:seaTemperature>
+      </metno:OceanForecast>
+   </mox:forecast>
+   <mox:forecast>
+      <metno:OceanForecast gml:id="f-50">
+         <mox:validTime>
+            <gml:TimePeriod gml:id="vt-50">
+               <gml:begin>2009-04-24T13:00:00Z</gml:begin>
+               <gml:end>2009-04-24T13:00:00Z</gml:end>
+            </gml:TimePeriod>
+         </mox:validTime>
+<!-- provider: wam [wam 4km grid] (seaIcePresence) ice: 0 -->
+         <mox:seaIcePresence>0</mox:seaIcePresence>
+<!-- provider: wam [wam 4km grid] (meanWaveDirection) ice: 0 -->
+         <mox:meanTotalWaveDirection uom="deg">128.4</mox:meanTotalWaveDirection>
+<!-- provider: wam [wam 4km grid] (significantTotalWaveHeight) ice: 0 -->
+         <mox:significantTotalWaveHeight uom="m">1.7</mox:significantTotalWaveHeight>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaCurrentDirection/seaCurrentSpeed) -->
+         <mox:seaCurrentDirection uom="deg">116.2</mox:seaCurrentDirection>
+         <mox:seaCurrentSpeed uom="m/s">0.04</mox:seaCurrentSpeed>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaSurfaceHeight) -->
+         <mox:seaSurfaceHeight uom="m">0.0</mox:seaSurfaceHeight>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaTemperature) -->
+         <mox:seaTemperature uom="Cel">7.5</mox:seaTemperature>
+      </metno:OceanForecast>
+   </mox:forecast>
+   <mox:forecast>
+      <metno:OceanForecast gml:id="f-51">
+         <mox:validTime>
+            <gml:TimePeriod gml:id="vt-51">
+               <gml:begin>2009-04-24T14:00:00Z</gml:begin>
+               <gml:end>2009-04-24T14:00:00Z</gml:end>
+            </gml:TimePeriod>
+         </mox:validTime>
+<!-- provider: wam [wam 4km grid] (seaIcePresence) ice: 0 -->
+         <mox:seaIcePresence>0</mox:seaIcePresence>
+<!-- provider: wam [wam 4km grid] (meanWaveDirection) ice: 0 -->
+         <mox:meanTotalWaveDirection uom="deg">121.0</mox:meanTotalWaveDirection>
+<!-- provider: wam [wam 4km grid] (significantTotalWaveHeight) ice: 0 -->
+         <mox:significantTotalWaveHeight uom="m">1.7</mox:significantTotalWaveHeight>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaCurrentDirection/seaCurrentSpeed) -->
+         <mox:seaCurrentDirection uom="deg">16.7</mox:seaCurrentDirection>
+         <mox:seaCurrentSpeed uom="m/s">0.04</mox:seaCurrentSpeed>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaSurfaceHeight) -->
+         <mox:seaSurfaceHeight uom="m">-0.1</mox:seaSurfaceHeight>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaTemperature) -->
+         <mox:seaTemperature uom="Cel">7.5</mox:seaTemperature>
+      </metno:OceanForecast>
+   </mox:forecast>
+   <mox:forecast>
+      <metno:OceanForecast gml:id="f-52">
+         <mox:validTime>
+            <gml:TimePeriod gml:id="vt-52">
+               <gml:begin>2009-04-24T15:00:00Z</gml:begin>
+               <gml:end>2009-04-24T15:00:00Z</gml:end>
+            </gml:TimePeriod>
+         </mox:validTime>
+<!-- provider: wam [wam 4km grid] (seaIcePresence) ice: 0 -->
+         <mox:seaIcePresence>0</mox:seaIcePresence>
+<!-- provider: wam [wam 4km grid] (meanWaveDirection) ice: 0 -->
+         <mox:meanTotalWaveDirection uom="deg">121.9</mox:meanTotalWaveDirection>
+<!-- provider: wam [wam 4km grid] (significantTotalWaveHeight) ice: 0 -->
+         <mox:significantTotalWaveHeight uom="m">1.7</mox:significantTotalWaveHeight>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaCurrentDirection/seaCurrentSpeed) -->
+         <mox:seaCurrentDirection uom="deg">7.0</mox:seaCurrentDirection>
+         <mox:seaCurrentSpeed uom="m/s">0.09</mox:seaCurrentSpeed>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaSurfaceHeight) -->
+         <mox:seaSurfaceHeight uom="m">-0.3</mox:seaSurfaceHeight>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaTemperature) -->
+         <mox:seaTemperature uom="Cel">7.5</mox:seaTemperature>
+      </metno:OceanForecast>
+   </mox:forecast>
+   <mox:forecast>
+      <metno:OceanForecast gml:id="f-53">
+         <mox:validTime>
+            <gml:TimePeriod gml:id="vt-53">
+               <gml:begin>2009-04-24T16:00:00Z</gml:begin>
+               <gml:end>2009-04-24T16:00:00Z</gml:end>
+            </gml:TimePeriod>
+         </mox:validTime>
+<!-- provider: wam [wam 4km grid] (seaIcePresence) ice: 0 -->
+         <mox:seaIcePresence>0</mox:seaIcePresence>
+<!-- provider: wam [wam 4km grid] (meanWaveDirection) ice: 0 -->
+         <mox:meanTotalWaveDirection uom="deg">123.9</mox:meanTotalWaveDirection>
+<!-- provider: wam [wam 4km grid] (significantTotalWaveHeight) ice: 0 -->
+         <mox:significantTotalWaveHeight uom="m">1.7</mox:significantTotalWaveHeight>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaCurrentDirection/seaCurrentSpeed) -->
+         <mox:seaCurrentDirection uom="deg">14.5</mox:seaCurrentDirection>
+         <mox:seaCurrentSpeed uom="m/s">0.14</mox:seaCurrentSpeed>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaSurfaceHeight) -->
+         <mox:seaSurfaceHeight uom="m">-0.3</mox:seaSurfaceHeight>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaTemperature) -->
+         <mox:seaTemperature uom="Cel">7.5</mox:seaTemperature>
+      </metno:OceanForecast>
+   </mox:forecast>
+   <mox:forecast>
+      <metno:OceanForecast gml:id="f-54">
+         <mox:validTime>
+            <gml:TimePeriod gml:id="vt-54">
+               <gml:begin>2009-04-24T17:00:00Z</gml:begin>
+               <gml:end>2009-04-24T17:00:00Z</gml:end>
+            </gml:TimePeriod>
+         </mox:validTime>
+<!-- provider: wam [wam 4km grid] (seaIcePresence) ice: 0 -->
+         <mox:seaIcePresence>0</mox:seaIcePresence>
+<!-- provider: wam [wam 4km grid] (meanWaveDirection) ice: 0 -->
+         <mox:meanTotalWaveDirection uom="deg">124.6</mox:meanTotalWaveDirection>
+<!-- provider: wam [wam 4km grid] (significantTotalWaveHeight) ice: 0 -->
+         <mox:significantTotalWaveHeight uom="m">1.7</mox:significantTotalWaveHeight>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaCurrentDirection/seaCurrentSpeed) -->
+         <mox:seaCurrentDirection uom="deg">25.7</mox:seaCurrentDirection>
+         <mox:seaCurrentSpeed uom="m/s">0.18</mox:seaCurrentSpeed>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaSurfaceHeight) -->
+         <mox:seaSurfaceHeight uom="m">-0.3</mox:seaSurfaceHeight>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaTemperature) -->
+         <mox:seaTemperature uom="Cel">7.5</mox:seaTemperature>
+      </metno:OceanForecast>
+   </mox:forecast>
+   <mox:forecast>
+      <metno:OceanForecast gml:id="f-55">
+         <mox:validTime>
+            <gml:TimePeriod gml:id="vt-55">
+               <gml:begin>2009-04-24T18:00:00Z</gml:begin>
+               <gml:end>2009-04-24T18:00:00Z</gml:end>
+            </gml:TimePeriod>
+         </mox:validTime>
+<!-- provider: wam [wam 4km grid] (seaIcePresence) ice: 0 -->
+         <mox:seaIcePresence>0</mox:seaIcePresence>
+<!-- provider: wam [wam 4km grid] (meanWaveDirection) ice: 0 -->
+         <mox:meanTotalWaveDirection uom="deg">120.7</mox:meanTotalWaveDirection>
+<!-- provider: wam [wam 4km grid] (significantTotalWaveHeight) ice: 0 -->
+         <mox:significantTotalWaveHeight uom="m">1.7</mox:significantTotalWaveHeight>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaCurrentDirection/seaCurrentSpeed) -->
+         <mox:seaCurrentDirection uom="deg">39.7</mox:seaCurrentDirection>
+         <mox:seaCurrentSpeed uom="m/s">0.19</mox:seaCurrentSpeed>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaSurfaceHeight) -->
+         <mox:seaSurfaceHeight uom="m">-0.1</mox:seaSurfaceHeight>
+<!-- provider: north sea skagen [skaggerak 1.5km grid] (seaTemperature) -->
+         <mox:seaTemperature uom="Cel">7.5</mox:seaTemperature>
+      </metno:OceanForecast>
+   </mox:forecast>
+</mox:Forecasts>

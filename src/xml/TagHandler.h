@@ -64,7 +64,7 @@ protected:
 
 	/// Override to handle encounter of start tag
 	virtual void handleStartTag(QXmlStreamReader & reader);
-
+	virtual void addSubHandlers();
 
 	typedef std::deque<TagHandler *> HandlerList;
 
@@ -72,8 +72,11 @@ protected:
 	HandlerList subHandlers;
 
 private:
+	void setSubHandlers_();
+
 	const QString tagName_;
 	const QString tagNamespace_;
+	bool hasSetSubHandlers_;
 };
 
 }

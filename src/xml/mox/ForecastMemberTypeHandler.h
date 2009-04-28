@@ -38,6 +38,9 @@ class ForecastMemberTypeHandler: public MoxTagHandler
 {
 public:
 	ForecastMemberTypeHandler(ForecastCollector & processor, const QString & tagName, const QString & tagNamespace);
+
+protected:
+	virtual void addSubHandlers();
 };
 
 }

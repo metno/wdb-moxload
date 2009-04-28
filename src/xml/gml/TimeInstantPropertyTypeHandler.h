@@ -44,6 +44,8 @@ public:
 
 	const boost::posix_time::ptime & timeInstant() const;
 protected:
+	virtual void addSubHandlers();
+
 	TimeInstantHandler * timeInstantHandler;
 };
 

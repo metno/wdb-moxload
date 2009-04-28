@@ -40,8 +40,14 @@ namespace mox
 ForecastMemberTypeHandler::ForecastMemberTypeHandler(ForecastCollector & processor, const QString & tagName, const QString & tagNamespace) :
 	MoxTagHandler(processor, tagName, tagNamespace)
 {
-	subHandlers.push_back(new ForecastTypeHandler(processor, "LocationForecast", metno::metnoNamespace, getConfigFile("LocationForecast.conf").file_string()));
-	subHandlers.push_back(new ForecastTypeHandler(processor, "OceanForecast", metno::metnoNamespace, getConfigFile("OceanForecast.conf").file_string()));
+}
+
+void ForecastMemberTypeHandler::addSubHandlers()
+{
+	MoxTagHandler::addSubHandlers();
+
+	subHandlers.push_back(new ForecastTypeHandler(collector, "LocationForecast", metno::metnoNamespace, getConfigFile("LocationForecast.conf").file_string()));
+	subHandlers.push_back(new ForecastTypeHandler(collector, "OceanForecast", metno::metnoNamespace, getConfigFile("OceanForecast.conf").file_string()));
 }
 
 }

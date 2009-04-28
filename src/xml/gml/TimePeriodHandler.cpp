@@ -41,39 +41,10 @@ TimePeriodHandler::TimePeriodHandler(mox::ForecastCollector & processor) :
 {
 }
 
-/*
 void TimePeriodHandler::handle(QXmlStreamReader & reader)
 {
-	reader.readNext();
-	while ( reader.tokenType() != QXmlStreamReader::StartElement )
-		reader.readNext();
+	// BUG: Does not handle generic gml tags
 
-	QStringRef tag = reader.name();
-	if ( tag == "beginPosition" or tag == "begin" )
-	{
-		reader.readNext();
-		if ( reader.tokenType() == QXmlStreamReader::Characters )
-			from_ = reader.text().toString();
-		while ( reader.tokenType() != QXmlStreamReader::EndElement )
-			reader.readNext();
-	}
-
-	// Skip to next start tag
-	while ( reader.tokenType() != QXmlStreamReader::StartElement )
-		reader.readNext();
-	tag = reader.name();
-	if ( tag == "endPosition" or tag == "end" )
-	{
-		reader.readNext();
-		if ( reader.tokenType() == QXmlStreamReader::Characters )
-			to_ = reader.text().toString();
-	}
-	while ( reader.tokenType() != QXmlStreamReader::EndElement )
-		reader.readNext();
-}
-*/
-void TimePeriodHandler::handle(QXmlStreamReader & reader)
-{
 	while (not reader.atEnd())
 	{
 		//QXmlStreamReader::TokenType token = reader.tokenType();

@@ -1,5 +1,7 @@
 libmoxBase_a_SOURCES += \
 	 src/xml/gml/namespace.h \
+	 src/xml/gml/AbstractGmlTypeHandler.cpp \
+	 src/xml/gml/AbstractGmlTypeHandler.h \
 	 src/xml/gml/PointPropertyTypeHandler.cpp \
 	 src/xml/gml/PointPropertyTypeHandler.h \
 	 src/xml/gml/PointTypeHandler.cpp \

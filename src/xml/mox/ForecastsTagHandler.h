@@ -40,7 +40,10 @@ namespace mox
 class ForecastsTagHandler : public MoxTagHandler
 {
 public:
-	ForecastsTagHandler(ForecastCollector & processor);
+	explicit ForecastsTagHandler(ForecastCollector & processor);
+
+protected:
+	virtual void addSubHandlers();
 };
 
 }

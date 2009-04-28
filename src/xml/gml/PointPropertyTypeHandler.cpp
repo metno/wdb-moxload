@@ -38,8 +38,12 @@ typedef PointTypeHandler PointHandler;
 
 PointPropertyTypeHandler::PointPropertyTypeHandler(mox::ForecastCollector & processor, const QString & tagName, const QString & tagNamespace) :
 	mox::MoxTagHandler(processor, tagName, tagNamespace)
+{}
+
+void PointPropertyTypeHandler::addSubHandlers()
 {
-	subHandlers.push_back(new PointHandler(processor));
+	mox::MoxTagHandler::addSubHandlers();
+	subHandlers.push_back(new PointHandler(collector));
 }
 
 }

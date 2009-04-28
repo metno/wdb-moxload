@@ -39,8 +39,13 @@ namespace gml
 
 TimeInstantHandler::TimeInstantHandler(mox::ForecastCollector & processor) :
 	mox::MoxTagHandler(processor, "TimeInstant", gmlNamespace)
+{}
+
+void TimeInstantHandler::addSubHandlers()
 {
-	subHandlers.push_back(new mox::MoxTagHandler(processor, "timePosition", gmlNamespace));
+	 mox::MoxTagHandler::addSubHandlers();
+
+	subHandlers.push_back(new mox::MoxTagHandler(collector, "timePosition", gmlNamespace));
 }
 
 void TimeInstantHandler::handle(QXmlStreamReader & reader)

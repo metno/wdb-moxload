@@ -39,8 +39,12 @@ TimePrimitivePropertyTypeHandler::TimePrimitivePropertyTypeHandler(mox::Forecast
 	mox::MoxTagHandler(processor, tagName, tagNamespace),
 	instantHandler(new TimeInstantHandler(processor)),
 	periodHandler(new TimePeriodHandler(processor))
+{}
 
+void TimePrimitivePropertyTypeHandler::addSubHandlers()
 {
+	MoxTagHandler::addSubHandlers();
+
 	subHandlers.push_back(instantHandler);
 	subHandlers.push_back(periodHandler);
 }

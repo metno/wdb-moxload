@@ -38,6 +38,9 @@ class PointPropertyTypeHandler: public mox::MoxTagHandler
 {
 public:
 	PointPropertyTypeHandler(mox::ForecastCollector & processor, const QString & tagName, const QString & tagNamespace);
+
+protected:
+	virtual void addSubHandlers();
 };
 
 }

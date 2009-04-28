@@ -36,7 +36,7 @@ namespace xml
 {
 
 TagHandler::TagHandler(const QString & tagName, const QString & tagNamespace) :
-	tagName_(tagName), tagNamespace_(tagNamespace)
+	tagName_(tagName), tagNamespace_(tagNamespace), hasSetSubHandlers_(false)
 {
 	//std::cout << "Expecting " << qPrintable(tagName_) << " in namespace " << qPrintable(tagNamespace_) << std::endl;
 }
@@ -55,6 +55,8 @@ bool TagHandler::matchesCurrentTag(const QXmlStreamReader & reader) const
 
 void TagHandler::handle(QXmlStreamReader & reader)
 {
+	setSubHandlers_();
+
 	handleStartTag(reader);
 
 	HandlerList::iterator nextExpectedElement = subHandlers.begin();
@@ -95,6 +97,19 @@ void TagHandler::handle(QXmlStreamReader & reader)
 void TagHandler::handleStartTag(QXmlStreamReader & reader)
 {
 	//std::cout << qPrintable(reader.name().toString())  << " - " << typeid(* this).name() << std::endl;
+}
+
+void TagHandler::setSubHandlers_()
+{
+	if ( not hasSetSubHandlers_ )
+	{
+		addSubHandlers();
+		hasSetSubHandlers_ = true;
+	}
+}
+
+void TagHandler::addSubHandlers()
+{
 }
 
 

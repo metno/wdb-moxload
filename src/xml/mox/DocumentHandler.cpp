@@ -35,7 +35,12 @@ namespace mox
 DocumentHandler::DocumentHandler(ForecastCollector & processor) :
 	MoxTagHandler(processor, "", "")
 {
-	subHandlers.push_back(new ForecastsTagHandler(processor));
+}
+
+void DocumentHandler::addSubHandlers()
+{
+	MoxTagHandler::addSubHandlers();
+	subHandlers.push_back(new ForecastsTagHandler(collector));
 }
 
 }

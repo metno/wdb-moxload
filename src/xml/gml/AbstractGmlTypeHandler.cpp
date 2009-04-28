@@ -24,28 +24,27 @@
  along with this program; if not, write to the Free Software
  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
  MA  02110-1301, USA
-*/
-
-#ifndef DOCUMENTHANDLER_H_
-#define DOCUMENTHANDLER_H_
-
-#include "MoxTagHandler.h"
-
-namespace mox
-{
-
-/**
- * Top-level handler for a mox document
  */
-class DocumentHandler: public MoxTagHandler
+
+#include "AbstractGmlTypeHandler.h"
+#include "namespace.h"
+
+namespace gml
 {
-public:
-	explicit DocumentHandler(ForecastCollector & processor);
 
-protected:
-	virtual void addSubHandlers();
-};
-
+AbstractGmlTypeHandler::AbstractGmlTypeHandler(const QString & tagName, const QString & tagNamespace) :
+	xml::TagHandler(tagName, tagNamespace)
+{
 }
 
-#endif /* DOCUMENTHANDLER_H_ */
+void AbstractGmlTypeHandler::handleStartTag(QXmlStreamReader & reader)
+{
+	subHandlers.push_back(new AbstractGmlTypeHandler("metaDataProperty", gmlNamespace));
+	subHandlers.push_back(new AbstractGmlTypeHandler("description", gmlNamespace));
+	subHandlers.push_back(new AbstractGmlTypeHandler("descriptionReference", gmlNamespace));
+	subHandlers.push_back(new AbstractGmlTypeHandler("identifier", gmlNamespace));
+	subHandlers.push_back(new AbstractGmlTypeHandler("name", gmlNamespace));
+}
+
+
+}

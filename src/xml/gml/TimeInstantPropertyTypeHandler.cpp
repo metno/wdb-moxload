@@ -38,6 +38,12 @@ TimeInstantPropertyTypeHandler::TimeInstantPropertyTypeHandler(mox::ForecastColl
 	mox::MoxTagHandler(processor, tagName, tagNamespace)
 {
 	timeInstantHandler = new TimeInstantHandler(processor);
+}
+
+void TimeInstantPropertyTypeHandler::addSubHandlers()
+{
+	mox::MoxTagHandler::addSubHandlers();
+
 	subHandlers.push_back(timeInstantHandler);
 }
 
