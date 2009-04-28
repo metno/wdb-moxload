@@ -27,7 +27,9 @@
  */
 
 #include "ForecastCollectionPrinter.h"
+#include <wdbLogHandler.h>
 #include <iostream>
+#include <exception>
 
 ForecastCollectionPrinter::ForecastCollectionPrinter()
 {
@@ -39,14 +41,19 @@ ForecastCollectionPrinter::~ForecastCollectionPrinter()
 
 void ForecastCollectionPrinter::handle(const mox::ForecastCollectionPtr & forecasts)
 {
+
+    WDB_LOG & log = WDB_LOG::getInstance( "wdb.moxLoad.list" );
+
 	for (mox::ForecastCollection::const_iterator it = forecasts->begin(); it != forecasts->end(); ++ it )
 	{
 		try
 		{
 			std::cout << it->getWciWriteQuery() << ";\n";
 		}
-		catch( ... )
-		{}
+		catch( std::exception & e )
+		{
+			log.infoStream() << "Unable to print <" << it->moxValueParameter() << '>';
+		}
 	}
 	std::cout.flush();
 }
