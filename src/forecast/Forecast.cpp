@@ -65,8 +65,8 @@ Forecast::Forecast(const ForecastLocation & location,
 
 std::string Forecast::getWciWriteQuery(const Time & referenceTime) const
 {
-	if ( location_.locationName().empty() )
-		throw std::logic_error("Write statement have no place name");
+//	if ( location_.locationName().empty() )
+//		throw std::logic_error("Write statement have no place name");
 
 	std::ostringstream query;
 	query << "SELECT wci.write(";

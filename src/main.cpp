@@ -30,8 +30,9 @@
 #include <config.h>
 #endif
 #include "forecast/Parser.h"
-#include "database/PointDataSaver.h"
 #include "configuration/MoxLoadConfiguration.h"
+#include "forecast/ForecastCollectionPrinter.h"
+#include "database/ForecastCollectionSaver.h"
 #include <wdbLogHandler.h>
 #include <QFile>
 #include <pqxx/pqxx>
@@ -109,9 +110,10 @@ int main(int argc, char ** argv)
 	{
 		mox::Parser parser;
 
-		boost::scoped_ptr<pqxx::connection> conn(
-				conf.output().list ? 0 :
-				new pqxx::connection(conf.database().pqDatabaseConnection()));
+		boost::scoped_ptr<mox::ForecastHandler> forecastHandler(
+				conf.output().list ?
+						static_cast<mox::ForecastHandler *>(new ForecastCollectionPrinter) :
+						static_cast<mox::ForecastHandler *>(new ForecastCollectionSaver(conf)));
 
 		for ( std::vector<boost::filesystem::path>::const_iterator it = files.begin(); it != files.end(); ++ it )
 		{
@@ -122,17 +124,7 @@ int main(int argc, char ** argv)
 			else
 				forecasts = parser.parseFile(it->file_string());
 
-			if ( conf.output().list )
-			{
-				for (mox::ForecastCollection::const_iterator it = forecasts->begin(); it != forecasts->end(); ++ it )
-					std::cout << it->getWciWriteQuery() << ";\n";
-				std::cout.flush();
-			}
-			else
-			{
-				PointDataSaver s(conf.moxLoading().referenceTime, conf.loading().dataProvider, conf.loading().loadPlaceDefinition, * forecasts);
-				conn->perform(s);
-			}
+			forecastHandler->handle(forecasts);
 		}
 	}
 	catch ( std::exception & e )

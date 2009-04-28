@@ -1,4 +1,7 @@
  libmoxBase_a_SOURCES += \
+ 	 src/forecast/ForecastHandler.h \
+ 	 src/forecast/ForecastCollectionPrinter.cpp \
+ 	 src/forecast/ForecastCollectionPrinter.h \
 	 src/forecast/ForecastCollection.h \
 	 src/forecast/ForecastCollector.cpp \
 	 src/forecast/ForecastCollector.h \
