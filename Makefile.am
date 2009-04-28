@@ -46,6 +46,7 @@ EXTRA_DIST =
 include src/moxLoad.mk
 include etc/moxLoad.mk
 include test/moxLoad.mk
+include doc/moxLoad.mk
 
 
 ###
