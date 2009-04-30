@@ -6,43 +6,54 @@
  */
 
 #include "ForecastCollector.h"
-#include <iostream>
+#include "DirectionalForce.h"
 #include <QXmlStreamReader>
+#include <iostream>
+#include <cmath>
 
 namespace mox
 {
 
 ForecastCollector::ForecastCollector(boost::shared_ptr<MoxParameterConverter> converter) :
-	validFrom_(boost::posix_time::time_from_string("2009-02-10 12:00:00")),
+	currentWork_(converter),
 	forecasts_(new ForecastCollection),
-	converter_(converter)
+	specialParameterHandler_(* this)
+{
+}
+
+ForecastCollector::~ForecastCollector()
 {
 }
 
 void ForecastCollector::setLocation(const ForecastLocation & location)
 {
-	location_ = location;
+	currentWork_.location(location);
 }
 
 void ForecastCollector::setAnalysisTime(const Forecast::Time & time)
 {
-	analysisTime_ = time;
+	currentWork_.analysisTime(time);
 }
 
 void ForecastCollector::setValidFrom(const Forecast::Time & time)
 {
-	validFrom_ = time;
+	currentWork_.validFrom(time);
 }
 
 void ForecastCollector::setValidTo(const Forecast::Time & time)
 {
-	validTo_ = time;
+	currentWork_.validTo(time);
 }
 
 void ForecastCollector::setValue(const std::string & valueParameter, double value)
 {
-	Forecast f(location_, analysisTime_, validFrom_, validTo_, valueParameter, value, converter_);
-	forecasts_->push_back(f);
+	if ( specialParameterHandler_.hasSpecialHandlingFor(valueParameter) )
+		specialParameterHandler_.handleParameter(currentWork_, valueParameter, value);
+	else
+	{
+		Forecast f = currentWork_.getForecast(valueParameter, value);
+		forecasts_->push_back(f);
+	}
 }
 
 

@@ -12,5 +12,10 @@
 	 src/forecast/MoxParameterConverter.cpp \
 	 src/forecast/MoxParameterConverter.h \
 	 src/forecast/Parser.cpp \
-	 src/forecast/Parser.h 
-
+	 src/forecast/Parser.h \
+	 src/forecast/DirectionalForce.cpp \
+	 src/forecast/DirectionalForce.h \
+	 src/forecast/SpecialParameterHandler.cpp \
+	 src/forecast/SpecialParameterHandler.h \
+	 src/forecast/HalfFinishedForecast.cpp \
+	 src/forecast/HalfFinishedForecast.h

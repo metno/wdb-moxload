@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!-- It is not possible to extract any U and V current vector elements from 
+this document, since direction and speed belong to  different valid times. -->
+
+<mox:Forecasts
+   gml:id="pt0-20090422"
+   xmlns:mox="http://wdb.met.no/wdbxml"
+   xmlns:metno="http://api.met.no"
+   xmlns:gml="http://www.opengis.net/gml/3.2"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://wdb.met.no/wdbxml/schema/products.xsd">
+   <gml:description>Location forecast from api.met.no </gml:description>
+   <mox:procedure xlink:href="http://api.met.no/yr-procedure-desc.html"/>
+   <mox:observedProperty xlink:href="urn:x-ogc:def:phenomenon:weather"/>
+   <mox:forecastPoint>
+      <gml:Point gml:id="fp-0" srsName="urn:ogc:def:crs:epsg:4326">
+         <gml:pos>9.5800 60.1000 -2147483648</gml:pos>
+      </gml:Point>
+   </mox:forecastPoint>
+   <mox:issueTime>
+      <gml:TimeInstant gml:id="it-0">
+         <gml:timePosition>2009-04-22T10:12:50Z</gml:timePosition>
+      </gml:TimeInstant>
+   </mox:issueTime>
+   <mox:forecast>
+      <metno:OceanForecast gml:id="f-0">
+         <mox:validTime>
+            <gml:TimePeriod gml:id="vt-0">
+               <gml:begin>2009-04-22T11:00:00Z</gml:begin>
+               <gml:end>2009-04-22T11:00:00Z</gml:end>
+            </gml:TimePeriod>
+         </mox:validTime>
+         <mox:seaCurrentDirection uom="deg">232.7</mox:seaCurrentDirection>
+      </metno:OceanForecast>
+   </mox:forecast>
+   <mox:forecast>
+      <metno:OceanForecast gml:id="f-1">
+         <mox:validTime>
+            <gml:TimePeriod gml:id="vt-1">
+               <gml:begin>2009-04-22T12:00:00Z</gml:begin>
+               <gml:end>2009-04-22T12:00:00Z</gml:end>
+            </gml:TimePeriod>
+         </mox:validTime>
+         <mox:seaCurrentSpeed uom="m/s">0.08</mox:seaCurrentSpeed>
+      </metno:OceanForecast>
+   </mox:forecast>
+</mox:Forecasts>

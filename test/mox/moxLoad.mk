@@ -16,7 +16,8 @@ moxLoadTest_SOURCES = \
 	test/mox/ValidTimeTest.cpp \
 	test/mox/ValueParameterTest.cpp \
 	src/configuration/testConfigFileLookup.cpp \
-	src/configuration/configFileLookup.h	
+	src/configuration/configFileLookup.h \
+	test/mox/SeaMovementTest.cpp
 	
 
 moxLoadTest_CPPFLAGS = \

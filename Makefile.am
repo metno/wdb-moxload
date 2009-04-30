@@ -42,6 +42,7 @@ install-user:
 
 
 EXTRA_DIST =
+CLEANFILES =
 
 include src/moxLoad.mk
 include etc/moxLoad.mk

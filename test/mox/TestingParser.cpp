@@ -58,7 +58,9 @@ void TestingParser::parse(const QString & xml)
 		"xsi:schemaLocation=\"http://api.met.no file:///home/vegardb/workspace/mox/schemas/metno.xsd\">\n";
 	static const QString tail = "\n</wdb:Forecasts>\n";
 
-	QXmlStreamReader reader(head + xml + tail);
+	QString xmlDocument = head + xml + tail;
+
+	QXmlStreamReader reader(xmlDocument);
 
 	reader.readNext();
 	while ( 1 )

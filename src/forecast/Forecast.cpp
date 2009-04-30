@@ -102,7 +102,6 @@ bool Forecast::shouldWriteToDatabase() const
 	return converter_->hasConversionForMoxParameter(moxValueParameter_);
 }
 
-
 const std::string Forecast::wdbValueParameter() const
 {
 	return converter_->wdbValueParameter(moxValueParameter_);
