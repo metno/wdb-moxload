@@ -133,19 +133,3 @@ int main(int argc, char ** argv)
 		return 1;
 	}
 }
-
-
-//			wdb::database::FeltDatabaseConnection dbConnection(conf.database().pqDatabaseConnection());
-//			felt::moxLoader loader(dbConnection, conf.loading(), logHandler);
-//			for ( std::vector<boost::filesystem::path>::const_iterator it = files.begin(); it != files.end(); ++ it )
-//			{
-//				try
-//				{
-//					loader.load(felt::FeltFile(*it));
-//				}
-//				catch ( std::exception & e )
-//				{
-//					log.errorStream() << "Unable to load file " << it->native_file_string();
-//					log.errorStream() << "Reason: " << e.what();
-//				}
-//			}
