@@ -47,7 +47,7 @@ getMoxLoading( MoxLoadConfiguration::MoxLoadingOptions & out )
 
 
 MoxLoadConfiguration::MoxLoadConfiguration(const std::string & defaultDataProvider) :
-	wdb::LoaderConfiguration(defaultDataProvider)
+	wdb::load::LoaderConfiguration(defaultDataProvider)
 {
 	cmdOptions().add( getMoxLoading( moxLoading_ ) );
 	configOptions().add( getMoxLoading( moxLoading_ ) );

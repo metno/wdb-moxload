@@ -32,7 +32,7 @@
 #include <wdb/LoaderConfiguration.h>
 #include <string>
 
-class MoxLoadConfiguration : public wdb::LoaderConfiguration
+class MoxLoadConfiguration : public wdb::load::LoaderConfiguration
 {
 public:
 	explicit MoxLoadConfiguration(const std::string & defaultDataProvider = "moxLoad");
