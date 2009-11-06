@@ -7,7 +7,7 @@
 
 
 # Scanned by Autoreconf; must be static (no expansion)
-ACLOCAL_AMFLAGS = 		-I config
+ACLOCAL_AMFLAGS = 		-I m4
 
 # Share directory organization
 wdblibdir = 	$(libdir)/wdb
@@ -49,5 +49,5 @@ include etc/moxLoad.mk
 include test/moxLoad.mk
 include doc/moxLoad.mk
 
-include config/debian.mk
+include mk/debian.mk
 
