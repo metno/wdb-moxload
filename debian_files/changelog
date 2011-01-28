@@ -1,8 +1,14 @@
+moxload (0.9.8-1) lucid; urgency=low
+
+  * Version for lucid
+
+ -- Michael Akinde <michaeloa@pc3027.pc.met.no>  Fri, 28 Jan 2011 10:00:00 +0000
+
 moxload (0.9.7-1) hardy; urgency=low
 
   * New version (wdb) 
 
- -- Michael Omotayo Akinde <michaeloa@pc2506.pc.met.no>  Mon, 07 Jun 2010 10:54:53 +0200
+ -- Michael Akinde <michaeloa@pc2506.pc.met.no>  Mon, 07 Jun 2010 10:54:53 +0200
 
 moxload (0.9.4-1) hardy; urgency=low
 
