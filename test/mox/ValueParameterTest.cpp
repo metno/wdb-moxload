@@ -80,7 +80,7 @@ TEST_F(ValueParameterTestAirTemperature, valueParameterName)
 TEST_F(ValueParameterTestAirTemperature, valueParameterToLevelConversion)
 {
 	const mox::Forecast & forecast = standardQuery("<wdb:airTemperature uom=\"Cel\">31.0</wdb:airTemperature>");
-	EXPECT_EQ("height above ground distance", forecast.levelParameter());
+	EXPECT_EQ("height above ground", forecast.levelParameter());
 	EXPECT_EQ(2, forecast.levelFrom());
 	EXPECT_EQ(2, forecast.levelTo());
 }
@@ -95,7 +95,7 @@ TEST_F(ValueParameterTest, valueParameterName)
 TEST_F(ValueParameterTest, valueParameterToLevelConversion)
 {
 	const mox::Forecast & forecast = standardQuery("<wdb:airPressure uom=\"hPa\">1017.4</wdb:airPressure>");
-	EXPECT_EQ("height above ground distance", forecast.levelParameter());
+	EXPECT_EQ("height above ground", forecast.levelParameter());
 	EXPECT_EQ(0, forecast.levelFrom());
 	EXPECT_EQ(0, forecast.levelTo());
 }

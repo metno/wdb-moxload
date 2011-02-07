@@ -55,7 +55,7 @@ TEST(ForecastTest, generateWciWrite)
 	expected << "'" << validFrom << "', ";
 	expected << "'" << validTo << "', ";
 	expected << "'relative humidity', ";
-	expected << "'height above ground distance', ";
+	expected << "'height above ground', ";
 	expected << "2, 2)";
 
 	const std::string expectedResult = expected.str();
@@ -83,7 +83,7 @@ TEST(ForecastTest, overrideReferenceTime)
 	expected << "'" << validFrom << "', ";
 	expected << "'" << validTo << "', ";
 	expected << "'relative humidity', ";
-	expected << "'height above ground distance', ";
+	expected << "'height above ground', ";
 	expected << "2, 2)";
 
 	const std::string expectedResult = expected.str();
