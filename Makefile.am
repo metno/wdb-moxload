@@ -51,3 +51,4 @@ include doc/moxLoad.mk
 
 include mk/debian.mk
 
+debian: common-debian
